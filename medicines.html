@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Search educational medicine information including drug names, ingredients, uses, warnings, dosage information, and other available details."
+  >
+
+  <meta
+    name="robots"
+    content="index, follow"
+  >
+
+  <title>Medicine Information | HealthGuide</title>
+
+  <link
+    rel="canonical"
+    href="https://your-domain.com/medicines.html"
+  >
+
+  <meta
+    name="theme-color"
+    content="#0f4c81"
+  >
+
+  <!-- Open Graph -->
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    property="og:title"
+    content="Medicine Information | HealthGuide"
+  >
+
+  <meta
+    property="og:description"
+    content="Search educational medicine information with HealthGuide."
+  >
+
+  <meta
+    property="og:site_name"
+    content="HealthGuide"
+  >
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- CSS -->
+  <link
+    rel="stylesheet"
+    href="./css/style.css"
+  >
+
+   <!-- CSS -->
+  <link
+    rel="stylesheet"
+    href="./css/medicines.css"
+  >
+
+  <!-- JavaScript -->
+  <script
+    type="module"
+    src="./js/medicines.js"
+  ></script>
+</head>
+
+<body>
+
+  <!-- Skip Link -->
+  <a
+    class="skip-link"
+    href="#main-content"
+  >
+    Skip to main content
+  </a>
+
+
+  <!-- Header -->
+  <header class="site-header">
+
+    <div class="container header-container">
+
+      <a
+        href="./index.html"
+        class="logo"
+        aria-label="HealthGuide home"
+      >
+        <span
+          class="logo-icon"
+          aria-hidden="true"
+        >
+          ✚
+        </span>
+
+        <span class="logo-text">
+          HealthGuide
+        </span>
+      </a>
+
+
+      <button
+        class="menu-button"
+        id="menu-button"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="site-nav"
+      >
+        <span aria-hidden="true">☰</span>
+      </button>
+
+
+      <nav
+        class="site-nav"
+        id="site-nav"
+        aria-label="Main navigation"
+      >
+
+        <a href="./index.html">
+          Home
+        </a>
+
+        <a
+          href="./medicines.html"
+          class="active"
+          aria-current="page"
+        >
+          Medicines
+        </a>
+
+        <a href="./first-aid.html">
+          First Aid
+        </a>
+
+        <a href="./login.html">
+          Login
+        </a>
+
+        <a href="./favorites.html">
+          Favorites
+        </a>
+
+        <a href="./about.html">
+          About
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- Main -->
+  <main id="main-content">
+
+    <!-- Page Header -->
+    <section class="page-hero">
+
+      <div class="container">
+
+        <p class="eyebrow">
+          MEDICINE INFORMATION
+        </p>
+
+        <h1>
+          Search Medicines
+        </h1>
+
+        <p>
+          Search available drug-label information for
+          educational purposes.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- Search Section -->
+    <section class="section">
+
+      <div class="container">
+
+        <form
+          class="search-form page-search-form"
+          id="medicine-search-form"
+          role="search"
+        >
+
+          <label
+            for="medicine-search"
+            class="sr-only"
+          >
+            Search for a medicine
+          </label>
+
+          <input
+            type="search"
+            id="medicine-search"
+            name="medicine"
+            placeholder="Example: paracetamol"
+            autocomplete="off"
+            required
+          >
+
+          <button
+            type="submit"
+            class="button primary-button"
+          >
+            Search
+          </button>
+
+        </form>
+
+
+        <!-- Search Status -->
+        <div
+          id="search-status"
+          class="search-status"
+          role="status"
+          aria-live="polite"
+        ></div>
+
+
+        <!-- Results -->
+        <section
+          class="results-section"
+          aria-labelledby="results-title"
+        >
+
+          <div class="results-header">
+
+            <div>
+              <p class="eyebrow">
+                RESULTS
+              </p>
+
+              <h2 id="results-title">
+                Medicine Results
+              </h2>
+            </div>
+
+          </div>
+
+
+          <div
+            id="medicine-results"
+            class="results-grid"
+          ></div>
+
+        </section>
+
+      </div>
+
+    </section>
+
+
+    <!-- Medical Notice -->
+    <section class="notice-section">
+
+      <div class="container">
+
+        <aside
+          class="notice-card"
+          role="note"
+        >
+
+          <span
+            class="notice-icon"
+            aria-hidden="true"
+          >
+            ⚠
+          </span>
+
+          <div>
+
+            <h2>
+              Educational Information Only
+            </h2>
+
+            <p>
+              HealthGuide does not diagnose medical conditions,
+              prescribe medicines, or replace professional medical
+              advice. Always consult a qualified healthcare
+              professional for medical decisions.
+            </p>
+
+          </div>
+
+        </aside>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer class="site-footer">
+
+    <div class="container footer-content">
+
+      <div>
+        <h2>
+          HealthGuide
+        </h2>
+
+        <p>
+          Health & First Aid Resource Finder
+        </p>
+      </div>
+
+      <nav
+        class="footer-nav"
+        aria-label="Footer navigation"
+      >
+
+        <a href="./about.html">
+          About
+        </a>
+
+        <a href="./medicines.html">
+          Medicines
+        </a>
+
+        <a href="./first-aid.html">
+          First Aid
+        </a>
+
+        <a href="./healthcare.html">
+          Healthcare
+        </a>
+
+      </nav>
+
+      <p>
+        &copy; 2026 HealthGuide.
+        Educational use only.
+      </p>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>

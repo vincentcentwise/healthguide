@@ -1,0 +1,265 @@
+
+/* =========================================
+   AUTHENTICATION
+========================================= */
+
+.auth-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 40px 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #eef8ff,
+      #f8fcfd
+    );
+}
+
+
+.auth-card {
+  width: min(100%, 480px);
+
+  padding: 42px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e9ed;
+  border-radius: 18px;
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.08);
+}
+
+
+.auth-logo {
+  display: inline-block;
+
+  margin-bottom: 35px;
+
+  font-size: 1.6rem;
+  font-weight: 800;
+
+  text-decoration: none;
+}
+
+
+.auth-header {
+  margin-bottom: 30px;
+}
+
+
+.auth-header h1 {
+  margin: 0 0 12px;
+
+  font-size: 2rem;
+}
+
+
+.auth-header p {
+  margin: 0;
+
+  line-height: 1.7;
+
+  color: #5d6870;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+
+.form-group label,
+.password-label label {
+  font-weight: 650;
+}
+
+
+.form-group input {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 13px 15px;
+
+  border: 1px solid #d4dde2;
+  border-radius: 9px;
+
+  font: inherit;
+
+  background: #fff;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.form-group input:focus {
+  outline: none;
+
+  border-color: #168aad;
+
+  box-shadow:
+    0 0 0 3px rgba(22, 138, 173, 0.12);
+}
+
+
+.form-group small {
+  color: #69757d;
+}
+
+
+/* =========================================
+   PASSWORD LABEL
+========================================= */
+
+.password-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+
+.password-label a {
+  font-size: 0.9rem;
+}
+
+
+/* =========================================
+   CHECKBOX
+========================================= */
+
+.checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  font-size: 0.9rem;
+  line-height: 1.5;
+
+  color: #5d6870;
+}
+
+
+.checkbox-row input {
+  margin-top: 4px;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.auth-submit {
+  min-height: 48px;
+
+  border: 0;
+  border-radius: 9px;
+
+  cursor: pointer;
+
+  font: inherit;
+  font-weight: 700;
+
+  background: #168aad;
+  color: white;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+
+.auth-submit:hover {
+  transform: translateY(-1px);
+}
+
+
+.auth-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.auth-status {
+  min-height: 20px;
+
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+
+.auth-status.success {
+  color: #18794e;
+}
+
+
+.auth-status.error {
+  color: #b42318;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.auth-footer {
+  margin-top: 30px;
+
+  padding-top: 25px;
+
+  border-top: 1px solid #e6ebee;
+
+  text-align: center;
+}
+
+
+.auth-footer p {
+  margin: 0 0 15px;
+}
+
+
+.auth-footer a {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 520px) {
+
+  .auth-page {
+    padding: 20px 15px;
+  }
+
+  .auth-card {
+    padding: 30px 22px;
+  }
+
+  .auth-header h1 {
+    font-size: 1.7rem;
+  }
+
+}

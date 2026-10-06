@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Detailed educational medicine information including uses, warnings, dosage, ingredients, and other available drug-label information."
+  >
+
+  <meta
+    name="robots"
+    content="index, follow"
+  >
+
+  <title>Medicine Details | HealthGuide</title>
+
+  <meta
+    name="theme-color"
+    content="#0f4c81"
+  >
+
+  <!-- Fonts -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Main CSS -->
+
+  <link
+    rel="stylesheet"
+    href="./css/style.css"
+  >
+
+  <!-- Medicine Details CSS -->
+
+  <link
+    rel="stylesheet"
+    href="./css/medicine-details.css"
+  >
+
+  <!-- JavaScript -->
+
+  <script
+    type="module"
+    src="./js/medicine-details.js"
+  ></script>
+
+</head>
+
+
+<body>
+
+  <!-- Skip Link -->
+
+  <a
+    class="skip-link"
+    href="#main-content"
+  >
+    Skip to main content
+  </a>
+
+
+  <!-- Header -->
+
+  <header class="site-header">
+
+    <div class="container header-container">
+
+      <a
+        href="./index.html"
+        class="logo"
+        aria-label="HealthGuide home"
+      >
+
+        <span
+          class="logo-icon"
+          aria-hidden="true"
+        >
+          ✚
+        </span>
+
+        <span class="logo-text">
+          HealthGuide
+        </span>
+
+      </a>
+
+
+      <button
+        class="menu-button"
+        id="menu-button"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="site-nav"
+      >
+
+        <span aria-hidden="true">
+          ☰
+        </span>
+
+      </button>
+
+
+      <nav
+        class="site-nav"
+        id="site-nav"
+        aria-label="Main navigation"
+      >
+
+        <a href="./index.html">
+          Home
+        </a>
+
+        <a
+          href="./medicines.html"
+          class="active"
+          aria-current="page"
+        >
+          Medicines
+        </a>
+
+        <a href="./first-aid.html">
+          First Aid
+        </a>
+
+        <a href="./healthcare.html">
+          Healthcare
+        </a>
+
+        <a href="./favorites.html">
+          Favorites
+        </a>
+
+        <a href="./about.html">
+          About
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- Main -->
+
+  <main id="main-content">
+
+    <!-- Page Hero -->
+
+    <section class="page-hero">
+
+      <div class="container">
+
+        <p class="eyebrow">
+          MEDICINE INFORMATION
+        </p>
+
+        <h1 id="medicine-title">
+          Medicine Details
+        </h1>
+
+        <p>
+          Educational information from the FDA drug-label database.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- Details -->
+
+    <section class="section">
+
+      <div class="container">
+
+        <div
+          id="medicine-status"
+          class="search-status"
+          role="status"
+          aria-live="polite"
+        >
+          Loading medicine information...
+        </div>
+
+
+        <article
+          id="medicine-details"
+          class="medicine-details"
+        ></article>
+
+
+        <div class="details-actions">
+
+          <a
+            href="./medicines.html"
+            class="button primary-button"
+          >
+            ← Back to Medicines
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Medical Notice -->
+
+    <section class="notice-section">
+
+      <div class="container">
+
+        <aside
+          class="notice-card"
+          role="note"
+        >
+
+          <span
+            class="notice-icon"
+            aria-hidden="true"
+          >
+            ⚠
+          </span>
+
+          <div>
+
+            <h2>
+              Educational Information Only
+            </h2>
+
+            <p>
+              HealthGuide does not diagnose medical conditions,
+              prescribe medicines, or replace professional medical
+              advice. Always consult a qualified healthcare
+              professional for medical decisions.
+            </p>
+
+          </div>
+
+        </aside>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+
+  <footer class="site-footer">
+
+    <div class="container footer-content">
+
+      <div>
+
+        <h2>
+          HealthGuide
+        </h2>
+
+        <p>
+          Health & First Aid Resource Finder
+        </p>
+
+      </div>
+
+
+      <nav
+        class="footer-nav"
+        aria-label="Footer navigation"
+      >
+
+        <a href="./about.html">
+          About
+        </a>
+
+        <a href="./medicines.html">
+          Medicines
+        </a>
+
+        <a href="./first-aid.html">
+          First Aid
+        </a>
+
+        <a href="./healthcare.html">
+          Healthcare
+        </a>
+
+      </nav>
+
+
+      <p>
+        &copy; 2026 HealthGuide.
+        Educational use only.
+      </p>
+
+    </div>
+
+  </footer>
+
+</body>
+
+</html>

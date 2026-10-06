@@ -1,0 +1,115 @@
+[
+  {
+    "id": "cuts",
+    "title": "Cuts and Wounds",
+    "category": "Injuries",
+    "icon": "🩹",
+    "shortDescription": "Basic first-aid steps for minor cuts and wounds.",
+    "whenToGetHelp": "Seek professional medical care if the wound is deep, heavily bleeding, caused by a serious object, or shows signs of infection.",
+    "steps": [
+      "Wash your hands before touching the wound.",
+      "Apply gentle pressure with clean gauze or cloth to control bleeding.",
+      "Rinse the wound gently with clean running water.",
+      "Clean around the wound with soap and water.",
+      "Cover the wound with a clean dressing or bandage.",
+      "Change the dressing when it becomes dirty or wet.",
+      "Monitor the wound for increasing redness, swelling, pain, warmth, or discharge."
+    ],
+    "emergency": false
+  },
+
+  {
+    "id": "burns",
+    "title": "Minor Burns",
+    "category": "Injuries",
+    "icon": "🔥",
+    "shortDescription": "Basic first-aid information for minor thermal burns.",
+    "whenToGetHelp": "Seek medical attention for extensive, deep, electrical, chemical, facial, genital, or major burns.",
+    "steps": [
+      "Move away from the source of the burn.",
+      "Cool the affected area with cool running water.",
+      "Continue cooling the area for several minutes.",
+      "Remove jewelry or tight items near the burn if they are not stuck to the skin.",
+      "Cover the burn loosely with a clean, non-stick dressing.",
+      "Do not break blisters.",
+      "Do not apply butter, oil, toothpaste, or other household substances to the burn."
+    ],
+    "emergency": false
+  },
+
+  {
+    "id": "nosebleed",
+    "title": "Nosebleeds",
+    "category": "Common Emergencies",
+    "icon": "🩸",
+    "shortDescription": "What to do when someone experiences a nosebleed.",
+    "whenToGetHelp": "Seek medical attention if bleeding is severe, follows a significant injury, causes difficulty breathing, or does not stop after sustained pressure.",
+    "steps": [
+      "Sit upright and remain calm.",
+      "Lean slightly forward rather than backward.",
+      "Pinch the soft part of the nose firmly.",
+      "Maintain continuous pressure for several minutes.",
+      "Breathe through the mouth while holding pressure.",
+      "Avoid blowing or picking the nose immediately after the bleeding stops.",
+      "Seek professional help if the bleeding continues or appears severe."
+    ],
+    "emergency": false
+  },
+
+  {
+    "id": "sprains",
+    "title": "Sprains",
+    "category": "Injuries",
+    "icon": "🦶",
+    "shortDescription": "Basic first-aid information for suspected minor sprains.",
+    "whenToGetHelp": "Seek medical assessment when there is severe pain, major swelling, deformity, inability to use the affected limb, numbness, or suspected fracture.",
+    "steps": [
+      "Stop the activity and protect the injured area.",
+      "Rest the affected joint.",
+      "Apply a cold pack wrapped in cloth for short periods.",
+      "Use gentle compression if appropriate and comfortable.",
+      "Elevate the affected limb when possible.",
+      "Avoid activities that increase pain or swelling.",
+      "Seek professional assessment if symptoms are severe or do not improve."
+    ],
+    "emergency": false
+  },
+
+  {
+    "id": "fainting",
+    "title": "Fainting",
+    "category": "Common Emergencies",
+    "icon": "🧠",
+    "shortDescription": "Basic first-aid response when someone loses consciousness briefly.",
+    "whenToGetHelp": "Seek emergency medical help if the person does not quickly regain consciousness, has difficulty breathing, has a seizure, suffered a significant injury, or has concerning symptoms.",
+    "steps": [
+      "Check that the area is safe.",
+      "Check whether the person responds to you.",
+      "If they are breathing and there is no immediate danger, help them lie down safely.",
+      "Avoid giving food or drink while the person is unconscious.",
+      "Monitor their breathing and responsiveness.",
+      "Allow the person to recover gradually.",
+      "Seek medical help when the cause is unknown, the episode is recurrent, or concerning symptoms are present."
+    ],
+    "emergency": true
+  },
+
+  {
+    "id": "choking",
+    "title": "Choking",
+    "category": "Emergency",
+    "icon": "🚨",
+    "shortDescription": "Emergency information for a person who may be choking.",
+    "whenToGetHelp": "Choking that prevents normal breathing is a medical emergency. Contact your local emergency service immediately.",
+    "steps": [
+      "Ask the person if they are choking and determine whether they can cough or speak.",
+      "If they can cough forcefully, encourage them to continue coughing.",
+      "If they cannot breathe, speak, or cough effectively, treat the situation as an emergency.",
+      "Call your local emergency service or have someone call while first aid is provided.",
+      "Use the appropriate choking first-aid technique for the person's age and condition.",
+      "If the person becomes unresponsive, begin appropriate CPR procedures and follow emergency-dispatch instructions.",
+      "After a serious choking episode, medical evaluation may be necessary."
+    ],
+    "emergency": true
+  }
+]

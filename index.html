@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <!-- =========================================
+       SEO
+  ========================================== -->
+
+  <title>
+    HealthGuide | Health & First Aid Resource Finder
+  </title>
+
+  <meta
+    name="description"
+    content="HealthGuide helps users explore educational medicine information, first-aid resources, and healthcare locations in one place."
+  >
+
+  <meta
+    name="robots"
+    content="index, follow"
+  >
+
+  <!-- IMPORTANT:
+       Replace this with your real deployed URL
+       when we deploy the project.
+  -->
+  <link
+    rel="canonical"
+    href="https://your-domain.com/"
+  >
+
+
+  <!-- =========================================
+       MOBILE / BROWSER
+  ========================================== -->
+
+  <meta
+    name="theme-color"
+    content="#0f4c81"
+  >
+
+  <meta
+    name="color-scheme"
+    content="light"
+  >
+
+
+  <!-- =========================================
+       OPEN GRAPH
+  ========================================== -->
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    property="og:title"
+    content="HealthGuide | Health & First Aid Resource Finder"
+  >
+
+  <meta
+    property="og:description"
+    content="Explore educational medicine information, first-aid resources, and healthcare locations with HealthGuide."
+  >
+
+  <meta
+    property="og:url"
+    content="https://your-domain.com/"
+  >
+
+  <meta
+    property="og:site_name"
+    content="HealthGuide"
+  >
+
+  <meta
+    property="og:locale"
+    content="en_US"
+  >
+
+  <!-- We will add the real image later -->
+  <meta
+    property="og:image"
+    content="https://your-domain.com/images/healthguide-social.jpg"
+  >
+
+
+  <!-- =========================================
+       TWITTER / SOCIAL SHARING
+  ========================================== -->
+
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  >
+
+  <meta
+    name="twitter:title"
+    content="HealthGuide | Health & First Aid Resource Finder"
+  >
+
+  <meta
+    name="twitter:description"
+    content="Explore educational medicine information, first-aid resources, and healthcare locations."
+  >
+
+  <meta
+    name="twitter:image"
+    content="https://your-domain.com/images/healthguide-social.jpg"
+  >
+
+
+  <!-- =========================================
+       FAVICON
+  ========================================== -->
+
+  <link
+    rel="icon"
+    href="./images/favicon.svg"
+    type="image/svg+xml"
+  >
+
+
+  <!-- =========================================
+       FONTS
+  ========================================== -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- =========================================
+       CSS
+  ========================================== -->
+
+  <link
+    rel="stylesheet"
+    href="./css/style.css"
+  >
+
+
+  <!-- =========================================
+       STRUCTURED DATA
+  ========================================== -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "HealthGuide",
+    "url": "https://your-domain.com/",
+    "description": "Health and first-aid educational resource finder."
+  }
+  </script>
+
+
+  <!-- =========================================
+       JAVASCRIPT
+  ========================================== -->
+
+  <script
+    type="module"
+    src="./js/main.js"
+  ></script>
+
+</head>
+
+
+<body>
+
+  <!-- Skip navigation for keyboard users -->
+  <a
+    class="skip-link"
+    href="#main-content"
+  >
+    Skip to main content
+  </a>
+
+
+  <!-- =========================================
+       HEADER
+  ========================================== -->
+
+  <header class="site-header">
+
+    <div class="container header-container">
+
+      <a
+        href="./index.html"
+        class="logo"
+        aria-label="HealthGuide home"
+      >
+
+        <span
+          class="logo-icon"
+          aria-hidden="true"
+        >
+          ✚
+        </span>
+
+        <span class="logo-text">
+          HealthGuide
+        </span>
+
+      </a>
+
+
+      <button
+        class="menu-button"
+        id="menu-button"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="site-nav"
+      >
+        <span aria-hidden="true">☰</span>
+      </button>
+
+
+      <nav
+        class="site-nav"
+        id="site-nav"
+        aria-label="Main navigation"
+      >
+
+        <a
+          href="./index.html"
+          class="active"
+          aria-current="page"
+        >
+          Home
+        </a>
+
+        <a href="./medicines.html">
+          Medicines
+        </a>
+
+        <a href="./first-aid.html">
+          First Aid
+        </a>
+
+        <a href="./login.html">
+          Login
+        </a>
+
+        <a href="./favorites.html">
+          Favorites
+        </a>
+
+        <a href="./about.html">
+          About
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================================
+       MAIN
+  ========================================== -->
+
+  <main id="main-content">
+
+
+    <!-- =======================================
+         HERO
+    ======================================== -->
+
+    <section
+      class="hero"
+      aria-labelledby="hero-title"
+    >
+
+      <div class="container hero-content">
+
+        <div class="hero-text">
+
+          <p class="eyebrow">
+            HEALTH & FIRST AID RESOURCE FINDER
+          </p>
+
+          <h1 id="hero-title">
+            Find useful health information in one place.
+          </h1>
+
+          <p class="hero-description">
+            Explore educational medicine information, learn
+            basic first-aid resources, and find healthcare-related
+            locations.
+          </p>
+
+
+          <form
+            class="search-form"
+            id="home-search-form"
+            role="search"
+          >
+
+            <label
+              for="home-search"
+              class="sr-only"
+            >
+              Search HealthGuide
+            </label>
+
+            <input
+              type="search"
+              id="home-search"
+              name="search"
+              placeholder="Search for a medicine or health resource..."
+              autocomplete="off"
+              enterkeyhint="search"
+            >
+
+            <button
+              type="submit"
+              class="button primary-button"
+            >
+              Search
+            </button>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================
+         QUICK ACCESS
+    ======================================== -->
+
+    <section
+      class="quick-access section"
+      aria-labelledby="explore-title"
+    >
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <p class="eyebrow">
+            EXPLORE
+          </p>
+
+          <h2 id="explore-title">
+            Health Resources
+          </h2>
+
+          <p>
+            Choose a resource to get started.
+          </p>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+
+          <a
+            href="./medicines.html"
+            class="feature-card"
+          >
+
+            <div
+              class="feature-icon"
+              aria-hidden="true"
+            >
+              💊
+            </div>
+
+            <h3>
+              Medicine Information
+            </h3>
+
+            <p>
+              Explore educational drug-label information,
+              including ingredients, uses, warnings,
+              dosage information, and other available details.
+            </p>
+
+            <span class="card-link">
+              Explore medicines
+              <span aria-hidden="true">→</span>
+            </span>
+
+          </a>
+
+
+          <a
+            href="./first-aid.html"
+            class="feature-card"
+          >
+
+            <div
+              class="feature-icon"
+              aria-hidden="true"
+            >
+              🩹
+            </div>
+
+            <h3>
+              First-Aid Resources
+            </h3>
+
+            <p>
+              Learn about basic first-aid situations through
+              educational information and practical response steps.
+            </p>
+
+            <span class="card-link">
+              Learn first aid
+              <span aria-hidden="true">→</span>
+            </span>
+
+          </a>
+
+
+          <a
+            href="./healthcare.html"
+            class="feature-card"
+          >
+
+            <div
+              class="feature-icon"
+              aria-hidden="true"
+            >
+              📍
+            </div>
+
+            <h3>
+              Find Healthcare
+            </h3>
+
+            <p>
+              Search for healthcare-related locations such as
+              hospitals, clinics, pharmacies, and other facilities.
+            </p>
+
+            <span class="card-link">
+              Find healthcare
+              <span aria-hidden="true">→</span>
+            </span>
+
+          </a>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================
+         IMPORTANT INFORMATION
+    ======================================== -->
+
+    <section
+      class="notice-section"
+      aria-labelledby="notice-title"
+    >
+
+      <div class="container">
+
+        <aside
+          class="notice-card"
+          role="note"
+        >
+
+          <span
+            class="notice-icon"
+            aria-hidden="true"
+          >
+            ⚠
+          </span>
+
+          <div>
+
+            <h2 id="notice-title">
+              Important Information
+            </h2>
+
+            <p>
+              HealthGuide provides educational information only.
+              It does not diagnose medical conditions or replace
+              professional medical advice. Always consult a
+              qualified healthcare professional for medical decisions.
+            </p>
+
+          </div>
+
+        </aside>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================================
+       FOOTER
+  ========================================== -->
+
+  <footer class="site-footer">
+
+    <div class="container footer-content">
+
+      <div>
+
+        <h2>
+          HealthGuide
+        </h2>
+
+        <p>
+          Health & First Aid Resource Finder
+        </p>
+
+      </div>
+
+
+      <nav
+        class="footer-nav"
+        aria-label="Footer navigation"
+      >
+
+        <a href="./about.html">
+          About
+        </a>
+
+        <a href="./medicines.html">
+          Medicines
+        </a>
+
+        <a href="./first-aid.html">
+          First Aid
+        </a>
+
+        <a href="./healthcare.html">
+          Healthcare
+        </a>
+
+      </nav>
+
+
+      <p>
+        &copy; 2026 HealthGuide.
+        Educational use only.
+      </p>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,261 @@
+/* =========================================
+   PAGE HERO
+========================================= */
+
+.page-hero {
+  padding: 4rem 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      #eff6ff,
+      #ecfeff
+    );
+
+  text-align: center;
+}
+
+.page-hero h1 {
+  font-family: "Poppins", sans-serif;
+
+  color: var(--primary);
+
+  font-size: clamp(2rem, 5vw, 3.2rem);
+
+  margin-bottom: 0.75rem;
+}
+
+.page-hero p:last-child {
+  max-width: 650px;
+
+  margin: 0 auto;
+
+  color: var(--text-light);
+
+  font-size: 1.05rem;
+}
+
+
+/* =========================================
+   PAGE SEARCH
+========================================= */
+
+.page-search-form {
+  max-width: 800px;
+
+  margin-bottom: 3rem;
+}
+
+
+/* =========================================
+   SEARCH STATUS
+========================================= */
+
+.search-status {
+  min-height: 2rem;
+
+  margin-bottom: 2rem;
+
+  color: var(--text-light);
+
+  text-align: center;
+}
+
+
+/* =========================================
+   RESULTS
+========================================= */
+
+.results-section {
+  margin-top: 2rem;
+}
+
+.results-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 1.5rem;
+}
+
+.results-header h2 {
+  font-family: "Poppins", sans-serif;
+
+  color: var(--primary);
+
+  font-size: 1.8rem;
+}
+
+.results-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 1.5rem;
+}
+
+
+/* =========================================
+   MEDICINE CARD
+========================================= */
+
+.medicine-card {
+  display: flex;
+
+  flex-direction: column;
+
+  padding: 1.5rem;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius);
+
+  box-shadow: var(--shadow);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.medicine-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 14px 30px rgba(15, 23, 42, 0.12);
+}
+
+.medicine-card h3 {
+  font-family: "Poppins", sans-serif;
+
+  color: var(--primary);
+
+  margin-bottom: 1rem;
+}
+
+.medicine-card p {
+  color: var(--text-light);
+
+  margin-bottom: 0.5rem;
+}
+
+.medicine-card strong {
+  color: var(--text);
+}
+
+.medicine-card-actions {
+  display: flex;
+
+  gap: 0.75rem;
+
+  margin-top: auto;
+
+  padding-top: 1.5rem;
+}
+
+.card-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex: 1;
+
+  padding: 0.7rem 1rem;
+
+  border-radius: 8px;
+
+  font-weight: 600;
+
+  border: 1px solid var(--primary);
+
+  color: var(--primary);
+
+  background: white;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.card-button:hover {
+  color: white;
+
+  background: var(--primary);
+}
+
+
+/* =========================================
+   EMPTY / ERROR STATES
+========================================= */
+
+.empty-state,
+.error-state {
+  grid-column: 1 / -1;
+
+  padding: 3rem 1.5rem;
+
+  text-align: center;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius);
+}
+
+.empty-state h3,
+.error-state h3 {
+  font-family: "Poppins", sans-serif;
+
+  color: var(--primary);
+
+  margin-bottom: 0.75rem;
+}
+
+.empty-state p,
+.error-state p {
+  color: var(--text-light);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+  .results-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+  .page-hero {
+    padding: 3rem 0;
+  }
+
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .medicine-card-actions {
+    flex-direction: column;
+  }
+
+}

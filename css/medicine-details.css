@@ -1,0 +1,133 @@
+/* ============================================
+   Medicine Details
+   ============================================ */
+
+.medicine-details {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+
+/* ============================================
+   Details Header
+   ============================================ */
+
+.details-header {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 8px 24px rgba(15, 76, 129, 0.08);
+  border: 1px solid #e5e7eb;
+}
+
+.details-header h2 {
+  margin: 0.4rem 0 0.8rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+}
+
+.generic-name {
+  margin: 0;
+  color: #475569;
+}
+
+
+/* ============================================
+   Details Grid
+   ============================================ */
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+
+.detail-box {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 1.25rem;
+}
+
+.detail-box h3 {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+  color: #0f4c81;
+}
+
+.detail-box p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+
+/* ============================================
+   Long Information Sections
+   ============================================ */
+
+.detail-section {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.detail-section h3 {
+  margin-top: 0;
+  font-family: "Poppins", sans-serif;
+  color: #0f4c81;
+}
+
+.detail-section p {
+  margin-bottom: 0;
+  line-height: 1.8;
+  white-space: pre-line;
+}
+
+
+/* ============================================
+   Warning Section
+   ============================================ */
+
+.warning-section {
+  border-left: 5px solid #d97706;
+}
+
+
+/* ============================================
+   Actions
+   ============================================ */
+
+.details-actions {
+  max-width: 1000px;
+  margin: 2rem auto 0;
+}
+
+
+/* ============================================
+   Responsive
+   ============================================ */
+
+@media (max-width: 700px) {
+
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .details-header {
+    padding: 1.5rem;
+  }
+
+  .details-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .detail-section {
+    padding: 1.25rem;
+  }
+
+}

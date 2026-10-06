@@ -1,0 +1,515 @@
+/* ============================================
+   ACCOUNT PAGE
+============================================ */
+
+.account-page {
+  min-height: 70vh;
+
+  padding: 70px 20px;
+
+  background: #f7fafb;
+}
+
+
+.account-container {
+  width: min(
+    1000px,
+    calc(100% - 20px)
+  );
+
+  margin: 0 auto;
+}
+
+
+/* ============================================
+   PAGE HEADING
+============================================ */
+
+.page-heading {
+  margin-bottom: 35px;
+}
+
+
+.page-heading > span {
+  font-size: 0.78rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+
+  opacity: 0.6;
+}
+
+
+.page-heading h1 {
+  margin: 8px 0 12px;
+
+  font-size: clamp(
+    2.2rem,
+    5vw,
+    3.4rem
+  );
+}
+
+
+.page-heading p {
+  max-width: 650px;
+
+  margin: 0;
+
+  line-height: 1.7;
+
+  opacity: 0.75;
+}
+
+
+/* ============================================
+   TOOLBAR
+============================================ */
+
+.account-toolbar {
+  display: flex;
+
+  gap: 12px;
+
+  margin-bottom: 25px;
+}
+
+
+.account-toolbar input,
+.account-toolbar select {
+  padding: 12px 14px;
+
+  border: 1px solid #d7dfe5;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  font: inherit;
+}
+
+
+.account-toolbar input {
+  flex: 1;
+}
+
+
+/* ============================================
+   EMPTY STATE
+============================================ */
+
+.empty-account-state {
+  padding: 70px 25px;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8ed;
+
+  border-radius: 16px;
+}
+
+
+.empty-account-state > div {
+  font-size: 3rem;
+
+  margin-bottom: 15px;
+}
+
+
+.empty-account-state h2 {
+  margin: 0 0 10px;
+}
+
+
+.empty-account-state p {
+  max-width: 500px;
+
+  margin: 0 auto 25px;
+
+  line-height: 1.7;
+
+  opacity: 0.7;
+}
+
+
+.empty-account-state a {
+  display: inline-block;
+
+  padding: 11px 18px;
+
+  border-radius: 8px;
+
+  background: #1f6f78;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-weight: 700;
+}
+
+
+/* ============================================
+   HISTORY
+============================================ */
+
+.history-actions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  margin-bottom: 20px;
+}
+
+
+.history-actions button {
+  padding: 10px 15px;
+
+  border: 1px solid #d5dce2;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  cursor: pointer;
+}
+
+
+.history-list {
+  display: grid;
+
+  gap: 12px;
+}
+
+
+/* ============================================
+   ACCOUNT CARD
+============================================ */
+
+.account-card,
+.settings-card {
+  margin-bottom: 20px;
+
+  padding: 30px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8ed;
+
+  border-radius: 16px;
+}
+
+
+.profile-avatar {
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  padding-bottom: 25px;
+
+  margin-bottom: 25px;
+
+  border-bottom: 1px solid #e5e9ed;
+}
+
+
+.avatar-placeholder {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 75px;
+
+  height: 75px;
+
+  border-radius: 50%;
+
+  background: #eef5f6;
+
+  font-size: 2rem;
+}
+
+
+.profile-avatar h2 {
+  margin: 0 0 5px;
+}
+
+
+.profile-avatar p {
+  margin: 0;
+
+  opacity: 0.7;
+}
+
+
+/* ============================================
+   FORM
+============================================ */
+
+.form-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap: 20px;
+}
+
+
+.form-field {
+  margin-bottom: 20px;
+}
+
+
+.form-field label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-weight: 700;
+}
+
+
+.form-field input,
+.form-field select {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 12px 14px;
+
+  border: 1px solid #d5dde4;
+
+  border-radius: 8px;
+
+  font: inherit;
+
+  background: #ffffff;
+}
+
+
+.form-field input:focus,
+.form-field select:focus {
+  outline: none;
+
+  border-color: #1f6f78;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(31, 111, 120, 0.1);
+}
+
+
+.form-field input:disabled {
+  background: #f1f3f5;
+
+  cursor: not-allowed;
+}
+
+
+.account-button {
+  padding: 12px 22px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #1f6f78;
+
+  color: #ffffff;
+
+  font: inherit;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+.form-status {
+  min-height: 25px;
+
+  margin-top: 15px;
+
+  line-height: 1.5;
+}
+
+
+/* ============================================
+   SETTINGS
+============================================ */
+
+.settings-card-header {
+  margin-bottom: 15px;
+}
+
+
+.settings-card-header > div {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+.settings-icon {
+  font-size: 1.5rem;
+}
+
+
+.settings-card h2 {
+  margin: 0;
+}
+
+
+.setting-row {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 18px 0;
+
+  border-top: 1px solid #e8ecef;
+
+  cursor: pointer;
+}
+
+
+.setting-row span {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+
+.setting-row small {
+  line-height: 1.5;
+
+  opacity: 0.65;
+}
+
+
+.setting-row input {
+  width: 20px;
+
+  height: 20px;
+}
+
+
+.settings-action-row {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 25px;
+
+  padding: 20px 0;
+
+  border-top: 1px solid #e8ecef;
+}
+
+
+.settings-action-row p {
+  margin-bottom: 0;
+
+  line-height: 1.6;
+
+  opacity: 0.7;
+}
+
+
+.settings-action-row a,
+.settings-action-row button {
+  flex-shrink: 0;
+
+  padding: 9px 15px;
+
+  border: 1px solid #d3dbe1;
+
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  text-decoration: none;
+
+  color: inherit;
+
+  cursor: pointer;
+
+  font: inherit;
+
+  font-weight: 600;
+}
+
+
+.settings-action-row.danger {
+  color: #a32020;
+}
+
+
+.settings-action-row.danger button {
+  border-color: #e2baba;
+
+  color: #a32020;
+}
+
+
+/* ============================================
+   MOBILE
+============================================ */
+
+@media (max-width: 700px) {
+
+  .account-page {
+    padding: 50px 15px;
+  }
+
+
+  .account-toolbar {
+    flex-direction: column;
+  }
+
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .profile-avatar {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+
+  .settings-action-row {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+
+  .setting-row {
+    align-items: flex-start;
+  }
+
+}

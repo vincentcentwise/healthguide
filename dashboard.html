@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Your HealthGuide dashboard."
+  >
+
+  <title>Dashboard | HealthGuide</title>
+
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/dashboard.css">
+
+</head>
+
+
+<body>
+
+  <header class="dashboard-header">
+
+    <div class="dashboard-header-inner">
+
+      <a
+        href="./dashboard.html"
+        class="dashboard-logo"
+      >
+        HealthGuide
+      </a>
+
+
+      <div class="dashboard-user">
+
+        <span id="user-name">
+          Loading...
+        </span>
+
+        <button
+          id="logout-button"
+          type="button"
+        >
+          Log Out
+        </button>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <main class="dashboard-container">
+
+    <section class="dashboard-welcome">
+
+      <p class="eyebrow">
+        HEALTHGUIDE DASHBOARD
+      </p>
+
+      <h1>
+        Welcome,
+        <span id="welcome-name">
+          User
+        </span>
+      </h1>
+
+      <p>
+        Your personalized space for discovering,
+        saving and managing health information.
+      </p>
+
+    </section>
+
+
+    <section class="dashboard-grid">
+
+      <a
+        href="./medicines.html"
+        class="dashboard-card"
+      >
+
+        <span class="dashboard-card-icon">
+          💊
+        </span>
+
+        <h2>
+          Medicines
+        </h2>
+
+        <p>
+          Search medicine information and
+          explore detailed drug information.
+        </p>
+
+      </a>
+
+
+      <a
+        href="./first-aid.html"
+        class="dashboard-card"
+      >
+
+        <span class="dashboard-card-icon">
+          🩹
+        </span>
+
+        <h2>
+          First Aid
+        </h2>
+
+        <p>
+          Learn about first-aid procedures
+          and emergency resources.
+        </p>
+
+      </a>
+
+
+      <a
+        href="./favorites.html"
+        class="dashboard-card"
+      >
+
+        <span class="dashboard-card-icon">
+          ⭐
+        </span>
+
+        <h2>
+          Favorites
+        </h2>
+
+        <p>
+          Access the health resources
+          you have saved.
+        </p>
+
+      </a>
+
+
+      <a
+        href="./history.html"
+        class="dashboard-card"
+      >
+
+        <span class="dashboard-card-icon">
+          🕘
+        </span>
+
+        <h2>
+          Search History
+        </h2>
+
+        <p>
+          Review your recent HealthGuide
+          activity.
+        </p>
+
+      </a>
+
+
+      <a
+        href="./profile.html"
+        class="dashboard-card"
+      >
+
+        <span class="dashboard-card-icon">
+          👤
+        </span>
+
+        <h2>
+          Profile
+        </h2>
+
+        <p>
+          Manage your personal account
+          information.
+        </p>
+
+      </a>
+
+
+      <a
+        href="./settings.html"
+        class="dashboard-card"
+      >
+
+        <span class="dashboard-card-icon">
+          ⚙️
+        </span>
+
+        <h2>
+          Settings
+        </h2>
+
+        <p>
+          Manage your HealthGuide
+          preferences.
+        </p>
+
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <script
+    type="module"
+    src="./js/dashboard.js"
+  ></script>
+
+</body>
+
+</html>
