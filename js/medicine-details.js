@@ -1,4 +1,4 @@
-import { getMedicineBySetId } from "./api.js";
+import { getMedicineBySetId, getDrugByNDC, getDrugSideEffects } from "./api.js";
 
 
 // ============================================
@@ -71,45 +71,38 @@ if (!setId) {
 
 
 // ============================================
-// Load Medicine Details
+// Load Medicine Details - FIXED with 3 APIs
 // ============================================
-
 async function loadMedicineDetails(setId) {
-
   try {
+    medicineStatus.textContent = "Loading medicine information...";
 
-    medicineStatus.textContent =
-      "Loading medicine information...";
-
-    const medicine =
-      await getMedicineBySetId(setId);
-
+    const medicine = await getMedicineBySetId(setId);
 
     if (!medicine) {
-
-      showError(
-        "Medicine information could not be found."
-      );
-
+      showError("Medicine information could not be found.");
       return;
     }
 
+    // Get extra data using generic name
+    const genericName = medicine.openfda?.generic_name?.[0] || medicine.openfda?.brand_name?.[0] || "";
 
-    displayMedicineDetails(medicine);
+    // Fetch NDC and Side Effects in parallel - don't crash if they fail
+    const [ndcData, sideEffects] = await Promise.all([
+      genericName? getDrugByNDC(genericName).catch(() => []) : [],
+      genericName? getDrugSideEffects(genericName).catch(() => []) : []
+    ]);
+
+    console.log("NDC:", ndcData);
+    console.log("Side Effects:", sideEffects);
+
+    // Pass extra data to display function
+    displayMedicineDetails(medicine, ndcData, sideEffects);
 
   } catch (error) {
-
-    console.error(
-      "Medicine details error:",
-      error
-    );
-
-    showError(
-      "Unable to retrieve medicine information."
-    );
-
+    console.error("Medicine details error:", error);
+    showError("Unable to retrieve medicine information.");
   }
-
 }
 
 
@@ -117,7 +110,7 @@ async function loadMedicineDetails(setId) {
 // Display Medicine Details
 // ============================================
 
-function displayMedicineDetails(medicine) {
+function displayMedicineDetails(medicine, ndcData = [], sideEffects = []) {
 
   const openFDA =
     medicine.openfda || {};
@@ -265,10 +258,49 @@ function displayMedicineDetails(medicine) {
       inactiveIngredient
     )}
 
+    ${createSideEffectsSection(sideEffects)}
+
   `;
 
 }
 
+// ============================================
+// NEW: Create Side Effects Section
+// ============================================
+function createSideEffectsSection(sideEffects) {
+  if (!sideEffects || sideEffects.length === 0) {
+    return `
+      <section class="detail-section">
+        <h3>Reported Side Effects</h3>
+        <p>No side effect reports found for this medicine in FDA Adverse Events database.</p>
+      </section>
+    `;
+  }
+
+  // Collect all reactions from all reports
+  let allReactions = [];
+  sideEffects.forEach(report => {
+    if (report.patient && report.patient.reaction) {
+      report.patient.reaction.forEach(r => {
+        if (r.reactionmeddrapt) allReactions.push(r.reactionmeddrapt);
+      });
+    }
+  });
+
+  // Remove duplicates
+  allReactions = [...new Set(allReactions)].slice(0, 15);
+
+  return `
+    <section class="detail-section warning-section">
+      <h3>Reported Side Effects (from FDA Adverse Events)</h3>
+      <p><strong>This is real-world reported data, not a full list. Always ask your doctor.</strong></p>
+      <ul class="side-effects-list">
+        ${allReactions.map(r => `<li>${escapeHTML(r)}</li>`).join("")}
+      </ul>
+      <p class="small-text">Source: openFDA Adverse Event Reports - ${sideEffects.length} recent cases analyzed.</p>
+    </section>
+  `;
+}
 
 // ============================================
 // Create Small Detail Section

@@ -19,25 +19,46 @@
 
 <body>
 
-  <header id="main-header">
+ <header class="site-header">
 
-    <div class="header-container">
+    <div class="container header-container">
 
-      <a href="./dashboard.html" class="logo">
-        HealthGuide
+      <a
+        href="./index.html"
+        class="logo"
+        aria-label="HealthGuide home"
+      >
+
+        <span
+          class="logo-icon"
+          aria-hidden="true"
+        >
+          ✚
+        </span>
+
+        <span class="logo-text">
+          HealthGuide
+        </span>
+
       </a>
 
       <button
-        class="menu-toggle"
-        id="menu-toggle"
-        aria-label="Open navigation"
+        class="menu-button"
+        id="menu-button"
+        type="button"
+        aria-label="Open navigation menu"
         aria-expanded="false"
-        aria-controls="main-nav"
+        aria-controls="site-nav"
       >
-        ☰
+        <span aria-hidden="true">☰</span>
       </button>
 
-      <nav id="main-nav">
+      <nav
+        class="site-nav"
+        id="site-nav"
+        aria-label="Main navigation"
+      >
+
 
         <a href="./dashboard.html" class="active">
           Dashboard
@@ -71,19 +92,14 @@
           Settings
         </a>
 
-        <button
-          type="button"
-          id="logout-button"
-          class="nav-logout"
-        >
-          Logout
-        </button>
 
       </nav>
 
     </div>
 
   </header>
+
+
 
 
   <main class="dashboard-page">

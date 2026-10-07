@@ -1,4 +1,4 @@
-import { searchMedicines } from "./api.js";
+import { searchMedicines, searchMedicinesRxNav } from "./api.js";
 
 
 // ============================================
@@ -95,38 +95,24 @@ if (initialSearch) {
 
 }
 
-
-// ============================================
-// Load Medicines
-// ============================================
-
 async function loadMedicines(searchTerm) {
-
   showLoading();
-
   try {
+    let medicines = await searchMedicines(searchTerm);
 
-    const medicines =
-      await searchMedicines(searchTerm);
+    // If FDA finds nothing, try RxNav
+    if (!medicines.length) {
+      const rxResults = await searchMedicinesRxNav(searchTerm);
+      // You can decide to show RxNav results or just show "not found"
+      console.log("RxNav fallback:", rxResults);
+    }
 
-    displayMedicines(
-      medicines,
-      searchTerm
-    );
-
+    displayMedicines(medicines, searchTerm);
   } catch (error) {
-
-    console.error(
-      "Medicine search error:",
-      error
-    );
-
+    console.error("Medicine search error:", error);
     showError();
-
   }
-
 }
-
 
 // ============================================
 // Loading State

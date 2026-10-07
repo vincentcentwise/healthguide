@@ -32,31 +32,49 @@
 
 <body>
 
-  <header id="main-header">
+ <header class="site-header">
 
-    <div class="header-container">
+    <div class="container header-container">
 
       <a
         href="./index.html"
         class="logo"
+        aria-label="HealthGuide home"
       >
-        HealthGuide
+
+        <span
+          class="logo-icon"
+          aria-hidden="true"
+        >
+          ✚
+        </span>
+
+        <span class="logo-text">
+          HealthGuide
+        </span>
+
       </a>
 
       <button
-        class="menu-toggle"
-        id="menu-toggle"
+        class="menu-button"
+        id="menu-button"
         type="button"
-        aria-label="Open navigation"
+        aria-label="Open navigation menu"
         aria-expanded="false"
+        aria-controls="site-nav"
       >
-        ☰
+        <span aria-hidden="true">☰</span>
       </button>
 
-      <nav id="main-nav">
+      <nav
+        class="site-nav"
+        id="site-nav"
+        aria-label="Main navigation"
+      >
 
-        <a href="./index.html">
-          Home
+
+        <a href="./dashboard.html" class="active">
+          Dashboard
         </a>
 
         <a href="./medicines.html">
@@ -75,15 +93,25 @@
           Favorites
         </a>
 
-        <a href="./about.html">
-          About
+        <a href="./history.html">
+          History
         </a>
+
+        <a href="./profile.html">
+          Profile
+        </a>
+
+        <a href="./settings.html">
+          Settings
+        </a>
+
 
       </nav>
 
     </div>
 
   </header>
+
 
 
   <main class="account-page">
