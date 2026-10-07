@@ -1,222 +1,403 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <meta
-    name="description"
-    content="Your HealthGuide dashboard."
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Dashboard | HealthGuide</title>
 
+  <meta
+    name="description"
+    content="Your personalized HealthGuide dashboard."
+  >
+
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/dashboard.css">
-
+  <link rel="stylesheet" href="./css/account-pages.css">
 </head>
-
 
 <body>
 
-  <header class="dashboard-header">
+  <header id="main-header">
 
-    <div class="dashboard-header-inner">
+    <div class="header-container">
 
-      <a
-        href="./dashboard.html"
-        class="dashboard-logo"
-      >
+      <a href="./dashboard.html" class="logo">
         HealthGuide
       </a>
 
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="main-nav"
+      >
+        ☰
+      </button>
 
-      <div class="dashboard-user">
+      <nav id="main-nav">
 
-        <span id="user-name">
-          Loading...
-        </span>
+        <a href="./dashboard.html" class="active">
+          Dashboard
+        </a>
+
+        <a href="./medicines.html">
+          Medicines
+        </a>
+
+        <a href="./first-aid.html">
+          First Aid
+        </a>
+
+        <a href="./healthcare.html">
+          Healthcare
+        </a>
+
+        <a href="./favorites.html">
+          Favorites
+        </a>
+
+        <a href="./history.html">
+          History
+        </a>
+
+        <a href="./profile.html">
+          Profile
+        </a>
+
+        <a href="./settings.html">
+          Settings
+        </a>
 
         <button
-          id="logout-button"
           type="button"
+          id="logout-button"
+          class="nav-logout"
         >
-          Log Out
+          Logout
         </button>
 
-      </div>
+      </nav>
 
     </div>
 
   </header>
 
 
-  <main class="dashboard-container">
+  <main class="dashboard-page">
 
-    <section class="dashboard-welcome">
+    <section class="dashboard-hero">
 
-      <p class="eyebrow">
-        HEALTHGUIDE DASHBOARD
-      </p>
+      <div class="container">
 
-      <h1>
-        Welcome,
-        <span id="welcome-name">
-          User
-        </span>
-      </h1>
+        <div>
 
-      <p>
-        Your personalized space for discovering,
-        saving and managing health information.
-      </p>
+          <span class="section-label">
+            HealthGuide Dashboard
+          </span>
+
+          <h1>
+            Welcome back,
+            <span id="user-name">there</span>.
+          </h1>
+
+          <p>
+            Quickly access your saved health resources,
+            recent searches, medicines, first-aid information,
+            and healthcare resources.
+          </p>
+
+        </div>
+
+      </div>
 
     </section>
 
 
-    <section class="dashboard-grid">
+    <section class="dashboard-content">
 
-      <a
-        href="./medicines.html"
-        class="dashboard-card"
-      >
+      <div class="container">
 
-        <span class="dashboard-card-icon">
-          💊
-        </span>
+        <!-- Statistics -->
 
-        <h2>
-          Medicines
-        </h2>
+        <div class="dashboard-stats">
 
-        <p>
-          Search medicine information and
-          explore detailed drug information.
-        </p>
+          <article class="stat-card">
 
-      </a>
+            <span class="stat-label">
+              Favorites
+            </span>
 
+            <strong id="favorite-count">
+              0
+            </strong>
 
-      <a
-        href="./first-aid.html"
-        class="dashboard-card"
-      >
+            <a href="./favorites.html">
+              View favorites →
+            </a>
 
-        <span class="dashboard-card-icon">
-          🩹
-        </span>
-
-        <h2>
-          First Aid
-        </h2>
-
-        <p>
-          Learn about first-aid procedures
-          and emergency resources.
-        </p>
-
-      </a>
+          </article>
 
 
-      <a
-        href="./favorites.html"
-        class="dashboard-card"
-      >
+          <article class="stat-card">
 
-        <span class="dashboard-card-icon">
-          ⭐
-        </span>
+            <span class="stat-label">
+              Searches
+            </span>
 
-        <h2>
-          Favorites
-        </h2>
+            <strong id="history-count">
+              0
+            </strong>
 
-        <p>
-          Access the health resources
-          you have saved.
-        </p>
+            <a href="./history.html">
+              View history →
+            </a>
 
-      </a>
+          </article>
 
 
-      <a
-        href="./history.html"
-        class="dashboard-card"
-      >
+          <article class="stat-card">
 
-        <span class="dashboard-card-icon">
-          🕘
-        </span>
+            <span class="stat-label">
+              Account
+            </span>
 
-        <h2>
-          Search History
-        </h2>
+            <strong id="account-status">
+              Active
+            </strong>
 
-        <p>
-          Review your recent HealthGuide
-          activity.
-        </p>
+            <a href="./profile.html">
+              View profile →
+            </a>
 
-      </a>
+          </article>
+
+        </div>
 
 
-      <a
-        href="./profile.html"
-        class="dashboard-card"
-      >
+        <!-- Quick Actions -->
 
-        <span class="dashboard-card-icon">
-          👤
-        </span>
+        <section class="dashboard-section">
 
-        <h2>
-          Profile
-        </h2>
+          <div class="section-heading">
 
-        <p>
-          Manage your personal account
-          information.
-        </p>
+            <div>
+              <span class="section-label">
+                Quick Actions
+              </span>
 
-      </a>
+              <h2>
+                Find what you need
+              </h2>
+            </div>
+
+          </div>
 
 
-      <a
-        href="./settings.html"
-        class="dashboard-card"
-      >
+          <div class="quick-actions">
 
-        <span class="dashboard-card-icon">
-          ⚙️
-        </span>
+            <a
+              href="./medicines.html"
+              class="action-card"
+            >
 
-        <h2>
-          Settings
-        </h2>
+              <span class="action-icon">
+                M
+              </span>
 
-        <p>
-          Manage your HealthGuide
-          preferences.
-        </p>
+              <div>
 
-      </a>
+                <h3>
+                  Search Medicines
+                </h3>
+
+                <p>
+                  Explore medicine information and
+                  detailed drug-label resources.
+                </p>
+
+              </div>
+
+            </a>
+
+
+            <a
+              href="./first-aid.html"
+              class="action-card"
+            >
+
+              <span class="action-icon">
+                +
+              </span>
+
+              <div>
+
+                <h3>
+                  First Aid
+                </h3>
+
+                <p>
+                  Learn about common first-aid
+                  situations and emergency preparation.
+                </p>
+
+              </div>
+
+            </a>
+
+
+            <a
+              href="./healthcare.html"
+              class="action-card"
+            >
+
+              <span class="action-icon">
+                H
+              </span>
+
+              <div>
+
+                <h3>
+                  Healthcare
+                </h3>
+
+                <p>
+                  Discover healthcare locations
+                  and related resources.
+                </p>
+
+              </div>
+
+            </a>
+
+          </div>
+
+        </section>
+
+
+        <!-- Recent Activity -->
+
+        <section class="dashboard-section">
+
+          <div class="section-heading">
+
+            <div>
+              <span class="section-label">
+                Recent Activity
+              </span>
+
+              <h2>
+                Your recent searches
+              </h2>
+            </div>
+
+            <a href="./history.html">
+              View all
+            </a>
+
+          </div>
+
+
+          <div
+            id="recent-searches"
+            class="recent-searches"
+          >
+
+            <div class="dashboard-empty">
+
+              <h3>
+                No recent searches
+              </h3>
+
+              <p>
+                Your medicine and health-resource searches
+                will appear here.
+              </p>
+
+              <a href="./medicines.html">
+                Start searching
+              </a>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- Favorites -->
+
+        <section class="dashboard-section">
+
+          <div class="section-heading">
+
+            <div>
+              <span class="section-label">
+                Saved Resources
+              </span>
+
+              <h2>
+                Your favorites
+              </h2>
+            </div>
+
+            <a href="./favorites.html">
+              View all
+            </a>
+
+          </div>
+
+
+          <div
+            id="recent-favorites"
+            class="recent-favorites"
+          >
+
+            <div class="dashboard-empty">
+
+              <h3>
+                No saved resources yet
+              </h3>
+
+              <p>
+                Save useful medicine and health resources
+                so you can find them again later.
+              </p>
+
+            </div>
+
+          </div>
+
+        </section>
+
+      </div>
 
     </section>
 
   </main>
 
 
-  <script
-    type="module"
-    src="./js/dashboard.js"
-  ></script>
+  <footer>
+
+    <div class="container">
+
+      <p>
+        &copy; 2026 HealthGuide. All rights reserved.
+      </p>
+
+      <p>
+        Educational health information — not a substitute
+        for professional medical advice.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script type="module" src="./js/dashboard.js"></script>
 
 </body>
-
 </html>
