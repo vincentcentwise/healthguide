@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="HealthGuide resource management"
+  >
+
+  <title>Resources | HealthGuide Admin</title>
+
+  <link
+    rel="stylesheet"
+    href="../css/admin.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="../css/resources.css"
+  >
+
+</head>
+
+<body>
+
+  <div class="admin-layout">
+
+    <!-- ======================================
+         SIDEBAR
+    ======================================= -->
+
+    <aside
+      class="admin-sidebar"
+      id="adminSidebar"
+    >
+
+      <div class="admin-brand">
+
+        <div class="admin-brand-icon">
+          H
+        </div>
+
+        <div>
+          <strong>HealthGuide</strong>
+          <span>Administration</span>
+        </div>
+
+      </div>
+
+
+      <nav class="admin-nav">
+
+        <a href="./index.html">
+          <span>📊</span>
+          Dashboard
+        </a>
+
+        <a href="./users.html">
+          <span>👥</span>
+          Users
+        </a>
+
+        <a
+          href="./resources.html"
+          class="active"
+        >
+          <span>📚</span>
+          Resources
+        </a>
+
+        <a href="./categories.html">
+          <span>🏷️</span>
+          Categories
+        </a>
+
+        <a href="./audit-logs.html">
+          <span>🛡️</span>
+          Audit Logs
+        </a>
+
+      </nav>
+
+
+      <div class="admin-sidebar-bottom">
+
+        <a href="../dashboard.html">
+          <span>↩</span>
+          User Dashboard
+        </a>
+
+        <button
+          type="button"
+          id="logoutButton"
+        >
+          <span>↪</span>
+          Logout
+        </button>
+
+      </div>
+
+    </aside>
+
+
+    <!-- ======================================
+         MAIN
+    ======================================= -->
+
+    <main class="admin-main">
+
+      <!-- TOPBAR -->
+
+      <header class="admin-topbar">
+
+        <button
+          type="button"
+          class="admin-menu-toggle"
+          id="menuToggle"
+          aria-label="Open menu"
+        >
+          ☰
+        </button>
+
+
+        <div class="admin-page-heading">
+
+          <h1>Resources</h1>
+
+          <p>
+            Manage HealthGuide educational resources.
+          </p>
+
+        </div>
+
+
+        <div class="admin-user">
+
+          <div
+            class="admin-avatar"
+            id="adminAvatar"
+          >
+            A
+          </div>
+
+          <div class="admin-user-info">
+
+            <strong id="adminName">
+              Administrator
+            </strong>
+
+            <span>
+              Administrator
+            </span>
+
+          </div>
+
+        </div>
+
+      </header>
+
+
+      <!-- ======================================
+           CONTENT
+      ======================================= -->
+
+      <section class="admin-content">
+
+
+        <!-- PAGE HEADER -->
+
+        <div class="admin-section-header">
+
+          <div>
+
+            <h2>
+              Resource Management
+            </h2>
+
+            <p>
+              Create, edit, publish, archive and manage
+              HealthGuide content.
+            </p>
+
+          </div>
+
+
+          <button
+            type="button"
+            class="admin-button"
+            id="newResourceButton"
+          >
+            + New Resource
+          </button>
+
+        </div>
+
+
+        <!-- ======================================
+             STATISTICS
+        ======================================= -->
+
+        <div class="admin-stats-grid">
+
+          <article class="admin-stat-card">
+
+            <div class="admin-stat-icon">
+              📚
+            </div>
+
+            <div>
+
+              <span>
+                Total Resources
+              </span>
+
+              <strong id="totalResources">
+                0
+              </strong>
+
+            </div>
+
+          </article>
+
+
+          <article class="admin-stat-card">
+
+            <div class="admin-stat-icon">
+              🟢
+            </div>
+
+            <div>
+
+              <span>
+                Published
+              </span>
+
+              <strong id="publishedResources">
+                0
+              </strong>
+
+            </div>
+
+          </article>
+
+
+          <article class="admin-stat-card">
+
+            <div class="admin-stat-icon">
+              📝
+            </div>
+
+            <div>
+
+              <span>
+                Drafts
+              </span>
+
+              <strong id="draftResources">
+                0
+              </strong>
+
+            </div>
+
+          </article>
+
+
+          <article class="admin-stat-card">
+
+            <div class="admin-stat-icon">
+              📦
+            </div>
+
+            <div>
+
+              <span>
+                Archived
+              </span>
+
+              <strong id="archivedResources">
+                0
+              </strong>
+
+            </div>
+
+          </article>
+
+        </div>
+
+
+        <!-- ======================================
+             FILTERS
+        ======================================= -->
+
+        <div class="admin-panel">
+
+          <div class="admin-panel-header">
+
+            <div>
+
+              <h2>
+                Resources
+              </h2>
+
+              <p>
+                Search and filter your content library.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="admin-filter-grid resource-filters">
+
+            <div class="admin-field">
+
+              <label for="resourceSearch">
+                Search
+              </label>
+
+              <input
+                type="search"
+                id="resourceSearch"
+                placeholder="Search resources..."
+              >
+
+            </div>
+
+
+            <div class="admin-field">
+
+              <label for="typeFilter">
+                Resource Type
+              </label>
+
+              <select id="typeFilter">
+
+                <option value="all">
+                  All Types
+                </option>
+
+                <option value="first_aid">
+                  First Aid
+                </option>
+
+                <option value="healthcare">
+                  Healthcare
+                </option>
+
+                <option value="article">
+                  Article
+                </option>
+
+                <option value="guide">
+                  Guide
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="admin-field">
+
+              <label for="statusFilter">
+                Status
+              </label>
+
+              <select id="statusFilter">
+
+                <option value="all">
+                  All Statuses
+                </option>
+
+                <option value="published">
+                  Published
+                </option>
+
+                <option value="draft">
+                  Draft
+                </option>
+
+                <option value="archived">
+                  Archived
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="admin-field">
+
+              <label for="categoryFilter">
+                Category
+              </label>
+
+              <select id="categoryFilter">
+
+                <option value="all">
+                  All Categories
+                </option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ======================================
+             RESOURCE TABLE
+        ======================================= -->
+
+        <div class="admin-panel">
+
+          <div class="admin-table-wrapper">
+
+            <table class="admin-table">
+
+              <thead>
+
+                <tr>
+
+                  <th>
+                    Resource
+                  </th>
+
+                  <th>
+                    Type
+                  </th>
+
+                  <th>
+                    Category
+                  </th>
+
+                  <th>
+                    Status
+                  </th>
+
+                  <th>
+                    Updated
+                  </th>
+
+                  <th>
+                    Actions
+                  </th>
+
+                </tr>
+
+              </thead>
+
+
+              <tbody id="resourcesTable">
+
+                <tr>
+
+                  <td
+                    colspan="6"
+                    class="admin-table-loading"
+                  >
+                    Loading resources...
+                  </td>
+
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+
+          <!-- EMPTY -->
+
+          <div
+            id="resourceEmptyState"
+            class="admin-empty-state"
+            hidden
+          >
+
+            <div class="admin-empty-icon">
+              📚
+            </div>
+
+            <h3>
+              No resources found
+            </h3>
+
+            <p>
+              Try changing your search or filters,
+              or create a new resource.
+            </p>
+
+          </div>
+
+
+          <!-- ERROR -->
+
+          <div
+            id="resourceErrorState"
+            class="admin-error-state"
+            hidden
+          >
+
+            <strong>
+              Unable to load resources.
+            </strong>
+
+            <p id="resourceErrorMessage">
+              Please try again.
+            </p>
+
+            <button
+              type="button"
+              class="admin-button"
+              id="retryResourcesButton"
+            >
+              Try Again
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ======================================
+           RESOURCE MODAL
+      ======================================= -->
+
+      <div
+        class="admin-modal"
+        id="resourceModal"
+        hidden
+      >
+
+        <div
+          class="admin-modal-backdrop"
+          id="modalBackdrop"
+        ></div>
+
+
+        <div
+          class="admin-modal-dialog"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="resourceModalTitle"
+        >
+
+          <div class="admin-modal-header">
+
+            <div>
+
+              <h2 id="resourceModalTitle">
+                Create Resource
+              </h2>
+
+              <p>
+                Build educational content for HealthGuide users.
+              </p>
+
+            </div>
+
+            <button
+              type="button"
+              class="admin-modal-close"
+              id="closeResourceModal"
+              aria-label="Close"
+            >
+              ×
+            </button>
+
+          </div>
+
+
+          <form id="resourceForm">
+
+            <input
+              type="hidden"
+              id="resourceId"
+            >
+
+
+            <!-- TITLE -->
+
+            <div class="admin-field">
+
+              <label for="resourceTitle">
+                Title *
+              </label>
+
+              <input
+                type="text"
+                id="resourceTitle"
+                required
+                maxlength="150"
+                placeholder="Example: Burns First Aid"
+              >
+
+            </div>
+
+
+            <!-- SLUG -->
+
+            <div class="admin-field">
+
+              <label for="resourceSlug">
+                Slug
+              </label>
+
+              <input
+                type="text"
+                id="resourceSlug"
+                maxlength="180"
+                placeholder="burns-first-aid"
+              >
+
+              <small>
+                Used for future SEO-friendly URLs.
+              </small>
+
+            </div>
+
+
+            <!-- TYPE + CATEGORY -->
+
+            <div class="admin-form-grid">
+
+              <div class="admin-field">
+
+                <label for="resourceType">
+                  Resource Type *
+                </label>
+
+                <select
+                  id="resourceType"
+                  required
+                >
+
+                  <option value="">
+                    Select type
+                  </option>
+
+                  <option value="first_aid">
+                    First Aid
+                  </option>
+
+                  <option value="healthcare">
+                    Healthcare
+                  </option>
+
+                  <option value="article">
+                    Article
+                  </option>
+
+                  <option value="guide">
+                    Guide
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <div class="admin-field">
+
+                <label for="resourceCategory">
+                  Category
+                </label>
+
+                <select id="resourceCategory">
+
+                  <option value="">
+                    Select category
+                  </option>
+
+                </select>
+
+              </div>
+
+            </div>
+
+
+            <!-- SUMMARY -->
+
+            <div class="admin-field">
+
+              <label for="resourceSummary">
+                Summary *
+              </label>
+
+              <textarea
+                id="resourceSummary"
+                rows="4"
+                maxlength="500"
+                required
+                placeholder="Short description of this resource..."
+              ></textarea>
+
+            </div>
+
+
+            <!-- CONTENT -->
+
+            <div class="admin-field">
+
+              <label for="resourceContent">
+                Content
+              </label>
+
+              <textarea
+                id="resourceContent"
+                rows="12"
+                placeholder='Enter JSON content, for example:
+                    {
+                    "description": "...",
+                    "steps": [],
+                    "warnings": [],
+                    "whenToSeekHelp": []
+                    }'
+                 ></textarea>
+
+              <small>
+                Content is stored as structured JSON.
+              </small>
+
+            </div>
+
+
+            <!-- STATUS -->
+
+            <div class="admin-field">
+
+              <label for="resourceStatus">
+                Status *
+              </label>
+
+              <select
+                id="resourceStatus"
+                required
+              >
+
+                <option value="draft">
+                  Draft
+                </option>
+
+                <option value="published">
+                  Published
+                </option>
+
+                <option value="archived">
+                  Archived
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <!-- FORM ERROR -->
+
+            <div
+              id="resourceFormError"
+              class="admin-form-error"
+              hidden
+            ></div>
+
+
+            <!-- FORM ACTIONS -->
+
+            <div class="admin-modal-actions">
+
+              <button
+                type="button"
+                class="admin-button secondary"
+                id="cancelResourceButton"
+              >
+                Cancel
+              </button>
+
+              <button
+                type="submit"
+                class="admin-button"
+                id="saveResourceButton"
+              >
+                Save Resource
+              </button>
+
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+
+
+      <!-- ======================================
+           FOOTER
+      ======================================= -->
+
+      <footer class="admin-footer">
+
+        <p>
+          HealthGuide Administration
+        </p>
+
+        <span>
+          Secure administrative environment
+        </span>
+
+      </footer>
+
+    </main>
+
+  </div>
+
+
+  <script
+    type="module"
+    src="../js/resources.js"
+  ></script>
+
+</body>
+
+</html>

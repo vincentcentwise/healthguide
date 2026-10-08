@@ -1,0 +1,233 @@
+/* ============================================
+   RESOURCE MANAGEMENT
+============================================ */
+
+.resource-filters {
+  grid-template-columns:
+    minmax(220px, 2fr)
+    repeat(3, minmax(150px, 1fr));
+}
+
+.resource-table-title strong,
+.resource-table-title span {
+  display: block;
+}
+
+.resource-table-title strong {
+  margin-bottom: 0.25rem;
+}
+
+.resource-table-title span {
+  color: #6b7280;
+  font-size: 0.75rem;
+}
+
+.resource-type {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.resource-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.admin-action-button {
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #374151;
+  border-radius: 7px;
+  padding: 0.4rem 0.65rem;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.admin-action-button:hover {
+  background: #f3f4f6;
+}
+
+.admin-action-button.success {
+  border-color: #bbf7d0;
+  color: #166534;
+  background: #f0fdf4;
+}
+
+.admin-action-button.warning {
+  border-color: #fde68a;
+  color: #92400e;
+  background: #fffbeb;
+}
+
+
+/* ============================================
+   MODAL
+============================================ */
+
+.admin-modal[hidden] {
+  display: none;
+}
+
+.admin-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+}
+
+.admin-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+}
+
+.admin-modal-dialog {
+  position: relative;
+  width: min(760px, calc(100% - 2rem));
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+
+  margin: 1rem auto;
+
+  background: #ffffff;
+  border-radius: 14px;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.admin-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 1rem;
+
+  padding: 1.25rem 1.5rem;
+
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.admin-modal-header h2 {
+  margin: 0 0 0.35rem;
+}
+
+.admin-modal-header p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.admin-modal-close {
+  border: 0;
+  background: transparent;
+  color: #6b7280;
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.admin-modal-dialog form {
+  padding: 1.5rem;
+}
+
+.admin-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.admin-field small {
+  color: #6b7280;
+  font-size: 0.75rem;
+}
+
+.admin-field textarea {
+  width: 100%;
+  resize: vertical;
+
+  padding: 0.75rem;
+
+  border: 1px solid #d9dee7;
+  border-radius: 8px;
+
+  font: inherit;
+  line-height: 1.5;
+
+  outline: none;
+}
+
+.admin-field textarea:focus {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.admin-form-error {
+  margin-top: 1rem;
+
+  padding: 0.85rem 1rem;
+
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+
+  background: #fef2f2;
+  color: #991b1b;
+
+  font-size: 0.875rem;
+}
+
+.admin-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+
+  border-top: 1px solid #e5e7eb;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+
+@media (max-width: 900px) {
+
+  .resource-filters {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+
+@media (max-width: 640px) {
+
+  .resource-filters,
+  .admin-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-modal-dialog {
+    width: calc(100% - 1rem);
+    margin: 0.5rem auto;
+    max-height: calc(100vh - 1rem);
+  }
+
+  .admin-modal-dialog form {
+    padding: 1rem;
+  }
+
+  .admin-modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .admin-modal-actions .admin-button {
+    width: 100%;
+  }
+
+}

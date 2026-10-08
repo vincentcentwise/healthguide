@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Audit Logs | HealthGuide Admin</title>
+
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body>
+
+  <div class="admin-layout">
+
+    <!-- ==============================
+         SIDEBAR
+    =============================== -->
+    <aside class="admin-sidebar" id="adminSidebar">
+
+      <div class="admin-brand">
+        <div class="admin-brand-icon">H</div>
+
+        <div>
+          <strong>HealthGuide</strong>
+          <span>Administration</span>
+        </div>
+      </div>
+
+      <nav class="admin-nav">
+
+        <a href="./index.html">
+          <span>📊</span>
+          Dashboard
+        </a>
+
+        <a href="./users.html">
+          <span>👥</span>
+          Users
+        </a>
+
+        <a href="./resources.html">
+          <span>📚</span>
+          Resources
+        </a>
+
+        <a href="./categories.html">
+          <span>🏷️</span>
+          Categories
+        </a>
+
+        <a href="./audit-logs.html" class="active">
+          <span>🛡️</span>
+          Audit Logs
+        </a>
+
+      </nav>
+
+      <div class="admin-sidebar-bottom">
+
+        <a href="../dashboard.html">
+          <span>↩</span>
+          User Dashboard
+        </a>
+
+        <button id="logoutButton" type="button">
+          <span>↪</span>
+          Logout
+        </button>
+
+      </div>
+
+    </aside>
+
+
+    <!-- ==============================
+         MAIN CONTENT
+    =============================== -->
+    <main class="admin-main">
+
+      <!-- TOPBAR -->
+      <header class="admin-topbar">
+
+        <button
+          class="admin-menu-toggle"
+          id="menuToggle"
+          type="button"
+          aria-label="Open administration menu"
+        >
+          ☰
+        </button>
+
+        <div class="admin-page-heading">
+
+          <div>
+            <h1>Audit Logs</h1>
+            <p>
+              Monitor important administrative activity across HealthGuide.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="admin-user">
+
+          <div class="admin-avatar" id="adminAvatar">
+            A
+          </div>
+
+          <div class="admin-user-info">
+            <strong id="adminName">Administrator</strong>
+            <span>Administrator</span>
+          </div>
+
+        </div>
+
+      </header>
+
+
+      <!-- PAGE CONTENT -->
+      <section class="admin-content">
+
+        <!-- ==============================
+             HEADER / SUMMARY
+        =============================== -->
+        <div class="admin-section-header">
+
+          <div>
+            <h2>Administrative Activity</h2>
+            <p>
+              Review who performed important actions, what was changed,
+              and when the action occurred.
+            </p>
+          </div>
+
+          <button
+            type="button"
+            class="admin-button secondary"
+            id="refreshLogsButton"
+          >
+            ↻ Refresh
+          </button>
+
+        </div>
+
+
+        <!-- ==============================
+             SUMMARY CARDS
+        =============================== -->
+        <div class="admin-stats-grid">
+
+          <article class="admin-stat-card">
+
+            <div class="admin-stat-icon">
+              📋
+            </div>
+
+            <div>
+              <span>Total Events</span>
+              <strong id="totalLogs">0</strong>
+            </div>
+
+          </article>
+
+
+          <article class="admin-stat-card">
+
+            <div class="admin-stat-icon">
+              👤
+            </div>
+
+            <div>
+              <span>Administrators Active</span>
+              <strong id="activeAdmins">0</strong>
+            </div>
+
+          </article>
+
+
+          <article class="admin-stat-card">
+
+            <div class="admin-stat-icon">
+              📝
+            </div>
+
+            <div>
+              <span>Resource Actions</span>
+              <strong id="resourceActions">0</strong>
+            </div>
+
+          </article>
+
+
+          <article class="admin-stat-card">
+
+            <div class="admin-stat-icon">
+              👥
+            </div>
+
+            <div>
+              <span>User Actions</span>
+              <strong id="userActions">0</strong>
+            </div>
+
+          </article>
+
+        </div>
+
+
+        <!-- ==============================
+             FILTERS
+        =============================== -->
+        <div class="admin-panel">
+
+          <div class="admin-panel-header">
+
+            <div>
+              <h2>Activity Log</h2>
+              <p>
+                Search and filter administrative events.
+              </p>
+            </div>
+
+          </div>
+
+
+          <div class="admin-filter-grid">
+
+            <div class="admin-field">
+
+              <label for="searchLogs">
+                Search
+              </label>
+
+              <input
+                type="search"
+                id="searchLogs"
+                placeholder="Search action, resource, or administrator..."
+              >
+
+            </div>
+
+
+            <div class="admin-field">
+
+              <label for="actionFilter">
+                Action
+              </label>
+
+              <select id="actionFilter">
+
+                <option value="all">
+                  All Actions
+                </option>
+
+                <option value="create">
+                  Create
+                </option>
+
+                <option value="update">
+                  Update
+                </option>
+
+                <option value="delete">
+                  Delete
+                </option>
+
+                <option value="publish">
+                  Publish
+                </option>
+
+                <option value="archive">
+                  Archive
+                </option>
+
+                <option value="suspend">
+                  Suspend
+                </option>
+
+                <option value="reactivate">
+                  Reactivate
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="admin-field">
+
+              <label for="resourceFilter">
+                Resource Type
+              </label>
+
+              <select id="resourceFilter">
+
+                <option value="all">
+                  All Types
+                </option>
+
+                <option value="user">
+                  User
+                </option>
+
+                <option value="resource">
+                  Resource
+                </option>
+
+                <option value="category">
+                  Category
+                </option>
+
+                <option value="system">
+                  System
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="admin-field">
+
+              <label for="dateFilter">
+                Date
+              </label>
+
+              <select id="dateFilter">
+
+                <option value="all">
+                  All Time
+                </option>
+
+                <option value="today">
+                  Today
+                </option>
+
+                <option value="7">
+                  Last 7 Days
+                </option>
+
+                <option value="30">
+                  Last 30 Days
+                </option>
+
+                <option value="90">
+                  Last 90 Days
+                </option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ==============================
+             TABLE
+        =============================== -->
+        <div class="admin-panel">
+
+          <div class="admin-table-wrapper">
+
+            <table class="admin-table">
+
+              <thead>
+
+                <tr>
+
+                  <th>Administrator</th>
+
+                  <th>Action</th>
+
+                  <th>Resource</th>
+
+                  <th>Resource ID</th>
+
+                  <th>Date & Time</th>
+
+                </tr>
+
+              </thead>
+
+              <tbody id="auditLogsTable">
+
+                <tr>
+
+                  <td colspan="5" class="admin-table-loading">
+                    Loading audit logs...
+                  </td>
+
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+
+          <!-- EMPTY STATE -->
+
+          <div
+            id="emptyState"
+            class="admin-empty-state"
+            hidden
+          >
+
+            <div class="admin-empty-icon">
+              🛡️
+            </div>
+
+            <h3>No audit activity found</h3>
+
+            <p>
+              There are no administrative activities matching your filters.
+            </p>
+
+          </div>
+
+
+          <!-- ERROR STATE -->
+
+          <div
+            id="errorState"
+            class="admin-error-state"
+            hidden
+          >
+
+            <strong>
+              Unable to load audit logs.
+            </strong>
+
+            <p id="errorMessage">
+              Please try again.
+            </p>
+
+            <button
+              type="button"
+              class="admin-button"
+              id="retryLogsButton"
+            >
+              Try Again
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- FOOTER -->
+      <footer class="admin-footer">
+
+        <p>
+          HealthGuide Administration
+        </p>
+
+        <span>
+          Secure administrative environment
+        </span>
+
+      </footer>
+
+    </main>
+
+  </div>
+
+
+  <script type="module" src="../js/audit-logs.js"></script>
+
+</body>
+</html>

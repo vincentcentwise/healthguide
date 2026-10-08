@@ -634,3 +634,211 @@ textarea {
     padding: 20px 16px;
   }
 }
+
+
+/* ============================================
+   AUDIT LOGS
+============================================ */
+
+.admin-filter-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(220px, 2fr)
+    repeat(3, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.admin-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.admin-field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.admin-field input,
+.admin-field select {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid #d9dee7;
+  border-radius: 8px;
+  background: #ffffff;
+  font: inherit;
+  outline: none;
+}
+
+.admin-field input:focus,
+.admin-field select:focus {
+  border-color: #2563eb;
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+
+/* ============================================
+   ADMIN BADGES
+============================================ */
+
+.admin-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.admin-badge.success {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.admin-badge.warning {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.admin-badge.danger {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.admin-badge.neutral {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+
+/* ============================================
+   TABLE USER
+============================================ */
+
+.admin-table-user {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.admin-table-user strong,
+.admin-table-user span {
+  display: block;
+}
+
+.admin-table-user span {
+  margin-top: 0.15rem;
+  font-size: 0.75rem;
+  color: #6b7280;
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* ============================================
+   SMALL AVATAR
+============================================ */
+
+.admin-avatar.small {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  font-size: 0.8rem;
+}
+
+
+/* ============================================
+   RESOURCE ID
+============================================ */
+
+.admin-resource-id {
+  display: inline-block;
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  padding: 0.3rem 0.5rem;
+
+  border-radius: 6px;
+
+  background: #f3f4f6;
+
+  font-size: 0.75rem;
+
+  color: #4b5563;
+}
+
+
+/* ============================================
+   EMPTY STATE
+============================================ */
+
+.admin-empty-state {
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.admin-empty-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.admin-empty-state h3 {
+  margin: 0 0 0.5rem;
+}
+
+.admin-empty-state p {
+  margin: 0;
+  color: #6b7280;
+}
+
+
+/* ============================================
+   ERROR STATE
+============================================ */
+
+.admin-error-state {
+  margin: 1.5rem 0;
+  padding: 1.25rem;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  background: #fef2f2;
+  color: #991b1b;
+}
+
+.admin-error-state strong {
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.admin-error-state p {
+  margin: 0 0 1rem;
+}
+
+
+/* ============================================
+   RESPONSIVE
+============================================ */
+
+@media (max-width: 900px) {
+
+  .admin-filter-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+
+@media (max-width: 640px) {
+
+  .admin-filter-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
