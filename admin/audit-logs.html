@@ -11,61 +11,88 @@
 
 <body>
 
+  
   <div class="admin-layout">
 
-    <!-- ==============================
+    <!-- ==========================================
          SIDEBAR
-    =============================== -->
-    <aside class="admin-sidebar" id="adminSidebar">
+    =========================================== -->
+
+    <aside class="admin-sidebar" id="admin-sidebar">
 
       <div class="admin-brand">
-        <div class="admin-brand-icon">H</div>
+        <a href="../index.html">
+          HealthGuide
+        </a>
 
-        <div>
-          <strong>HealthGuide</strong>
-          <span>Administration</span>
-        </div>
+        <span>
+          Administration
+        </span>
       </div>
 
-      <nav class="admin-nav">
 
-        <a href="./index.html">
+      <nav class="admin-nav" aria-label="Admin navigation">
+
+        <a
+          href="./index.html"
+          class="admin-nav-link active"
+        >
           <span>📊</span>
-          Dashboard
+          <span>Dashboard</span>
         </a>
 
-        <a href="./users.html">
+        <a
+          href="./users.html"
+          class="admin-nav-link"
+        >
           <span>👥</span>
-          Users
+          <span>Users</span>
         </a>
 
-        <a href="./resources.html">
+        <a
+          href="./resources.html"
+          class="admin-nav-link"
+        >
           <span>📚</span>
-          Resources
+          <span>Resources</span>
         </a>
 
-        <a href="./categories.html">
-          <span>🏷️</span>
-          Categories
+        <a
+          href="./categories.html"
+          class="admin-nav-link"
+        >
+          <span>🗂️</span>
+          <span>Categories</span>
         </a>
 
-        <a href="./audit-logs.html" class="active">
-          <span>🛡️</span>
-          Audit Logs
+        <a
+          href="./audit-logs.html"
+          class="admin-nav-link"
+        >
+          <span>📝</span>
+          <span>Audit Logs</span>
         </a>
 
       </nav>
 
+
       <div class="admin-sidebar-bottom">
 
-        <a href="../dashboard.html">
-          <span>↩</span>
-          User Dashboard
+        <a
+          href="../dashboard.html"
+          class="admin-nav-link"
+        >
+          <span>←</span>
+          <span>User Dashboard</span>
         </a>
 
-        <button id="logoutButton" type="button">
+        <button
+          type="button"
+          id="admin-logout"
+          class="admin-logout"
+        >
           <span>↪</span>
-          Logout
+          <span>Logout</span>
         </button>
 
       </div>
@@ -73,48 +100,64 @@
     </aside>
 
 
-    <!-- ==============================
+    <!-- ==========================================
          MAIN CONTENT
-    =============================== -->
+    =========================================== -->
+
     <main class="admin-main">
 
-      <!-- TOPBAR -->
+      <!-- Top bar -->
+
       <header class="admin-topbar">
 
         <button
-          class="admin-menu-toggle"
-          id="menuToggle"
           type="button"
-          aria-label="Open administration menu"
+          id="admin-menu-button"
+          class="admin-menu-button"
+          aria-label="Open admin navigation"
+          aria-expanded="false"
         >
           ☰
         </button>
 
+
         <div class="admin-page-heading">
 
-          <div>
-            <h1>Audit Logs</h1>
-            <p>
-              Monitor important administrative activity across HealthGuide.
-            </p>
-          </div>
+          <p class="admin-eyebrow">
+            Administration
+          </p>
+
+          <h1>
+            Dashboard
+          </h1>
 
         </div>
 
+
         <div class="admin-user">
 
-          <div class="admin-avatar" id="adminAvatar">
-            A
+          <div class="admin-avatar">
+            <span id="admin-avatar-letter">
+              A
+            </span>
           </div>
 
           <div class="admin-user-info">
-            <strong id="adminName">Administrator</strong>
-            <span>Administrator</span>
+
+            <strong id="admin-user-name">
+              Administrator
+            </strong>
+
+            <span>
+              Admin
+            </span>
+
           </div>
 
         </div>
 
       </header>
+
 
 
       <!-- PAGE CONTENT -->

@@ -156,7 +156,7 @@ textarea {
 
 .admin-main {
   min-width: 0;
-  margin-left: 250px;
+
   min-height: 100vh;
  
   grid-column: 2;
