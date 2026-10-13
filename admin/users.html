@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>User Management | HealthGuide Admin</title>
+  <link rel="stylesheet" href="../css/admin.css">
+  <link rel="stylesheet" href="../css/admin-users.css">
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <a class="admin-brand" href="./index.html">
+        <span class="brand-icon">✚</span>
+        <span>HealthGuide<small>ADMINISTRATION</small></span>
+      </a>
+
+      <nav class="admin-nav" aria-label="Admin navigation">
+        <span class="nav-heading">WORKSPACE</span>
+        <a href="./index.html">▦ <span>Overview</span></a>
+        <a class="active" href="./users.html">♙ <span>Users</span></a>
+        <a href="./resources.html">▤ <span>Resources</span></a>
+        <a href="./catalog.html">▦ <span>Catalog</span></a>
+
+        <span class="nav-heading">SYSTEM</span>
+        <a href="./audit-logs.html">◷ <span>Audit Logs</span></a>
+        <a href="../dashboard.html">↗ <span>User Dashboard</span></a>
+      </nav>
+
+      <button id="logout-button" class="sidebar-logout" type="button">
+        ↪ &nbsp; Sign out
+      </button>
+    </aside>
+
+    <main class="admin-main">
+      <header class="users-topbar">
+        <div>
+          <p class="eyebrow">ADMINISTRATION / USERS</p>
+          <h1>User Management</h1>
+          <p class="muted">Manage HealthGuide accounts and account access.</p>
+        </div>
+        <div class="admin-avatar" id="admin-avatar">A</div>
+      </header>
+
+      <div id="page-message" class="page-message" role="status" hidden></div>
+
+      <section class="user-stat-grid" aria-label="User statistics">
+        <article class="user-stat-card">
+          <span class="stat-label">Total accounts</span>
+          <strong id="total-users">—</strong>
+          <span class="stat-note">Profiles in HealthGuide</span>
+        </article>
+        <article class="user-stat-card">
+          <span class="stat-label">Active accounts</span>
+          <strong id="active-users">—</strong>
+          <span class="stat-note">Currently active</span>
+        </article>
+        <article class="user-stat-card">
+          <span class="stat-label">Administrators</span>
+          <strong id="admin-users">—</strong>
+          <span class="stat-note">Privileged profiles</span>
+        </article>
+        <article class="user-stat-card">
+          <span class="stat-label">Suspended</span>
+          <strong id="suspended-users">—</strong>
+          <span class="stat-note">Access restricted by status</span>
+        </article>
+      </section>
+
+      <section class="users-panel">
+        <div class="users-panel-heading">
+          <div>
+            <h2>Registered accounts</h2>
+            <p>Search profiles and manage account status.</p>
+          </div>
+          <button id="refresh-users" class="secondary-button" type="button">
+            ↻ Refresh
+          </button>
+        </div>
+
+        <div class="users-toolbar">
+          <label class="user-search">
+            <span aria-hidden="true">⌕</span>
+            <input id="user-search" type="search"
+              placeholder="Search name or account ID..."
+              aria-label="Search users">
+          </label>
+
+          <label>
+            <span class="sr-only">Filter by role</span>
+            <select id="role-filter">
+              <option value="all">All roles</option>
+              <option value="user">Users</option>
+              <option value="admin">Administrators</option>
+            </select>
+          </label>
+
+          <label>
+            <span class="sr-only">Filter by status</span>
+            <select id="status-filter">
+              <option value="all">All statuses</option>
+              <option value="active">Active</option>
+              <option value="suspended">Suspended</option>
+              <option value="deleted">Deactivated</option>
+              <option value="unknown">Unspecified</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="users-table-wrap">
+          <table class="users-table">
+            <thead>
+              <tr>
+                <th scope="col">Account</th>
+                <th scope="col">Role</th>
+                <th scope="col">Status</th>
+                <th scope="col">Joined</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="users-table-body">
+              <tr>
+                <td colspan="5" class="table-state">Loading accounts…</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="users-footer">
+          <span id="results-count">Loading accounts…</span>
+          <span>Account changes may take effect on the next request.</span>
+        </div>
+      </section>
+
+      <p class="users-disclaimer">
+        Account status is managed through HealthGuide profiles.
+        Authentication and database security policies must also enforce access restrictions.
+      </p>
+    </main>
+  </div>
+
+  <dialog id="user-details-dialog" class="user-dialog">
+    <div class="dialog-heading">
+      <div>
+        <p class="eyebrow">ACCOUNT DETAILS</p>
+        <h2 id="detail-name">User account</h2>
+      </div>
+      <button id="close-details" class="icon-button"
+        type="button" aria-label="Close details">×</button>
+    </div>
+
+    <dl class="user-details-list">
+      <div><dt>Account ID</dt><dd id="detail-id"></dd></div>
+      <div><dt>Role</dt><dd id="detail-role"></dd></div>
+      <div><dt>Status</dt><dd id="detail-status"></dd></div>
+      <div><dt>Created</dt><dd id="detail-created"></dd></div>
+      <div><dt>Last profile update</dt><dd id="detail-updated"></dd></div>
+    </dl>
+
+    <p class="muted small">
+      Email addresses are not shown because they belong to Supabase Auth
+      and are not included in the public profiles query.
+    </p>
+  </dialog>
+
+  <script type="module" src="../js/admin-users.js"></script>
+</body>
+</html>

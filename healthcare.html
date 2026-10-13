@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Find hospitals, clinics, pharmacies, laboratories, and other healthcare facilities near your location with HealthGuide.">
+  <title>Find Healthcare | HealthGuide</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/healthcare.css">
+
+  <script type="module" src="js/healthcare.js"></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <span class="brand-icon">+</span>
+      <span>Health<span class="brand-accent">Guide</span></span>
+    </a>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="medicines.html">Medicines</a>
+      <a href="first-aid.html">First Aid</a>
+      <a class="active" href="healthcare.html">Healthcare Finder</a>
+      <a href="favorites.html">Favorites</a>
+    </nav>
+
+    <a class="account-link" href="dashboard.html">My Account</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <span class="eyebrow">YOUR HEALTH, CLOSER</span>
+        <h1>Find healthcare <span>near you.</span></h1>
+        <p>
+          Discover hospitals, clinics, pharmacies, laboratories, and other
+          healthcare facilities in your area.
+        </p>
+
+        <form id="healthcareSearchForm" class="search-form">
+          <label class="location-field">
+            <span class="field-label">Your location</span>
+            <input
+              id="locationInput"
+              type="text"
+              placeholder="Enter a city, town, or neighbourhood"
+              autocomplete="street-address"
+              required
+            >
+          </label>
+
+          <label class="category-field">
+            <span class="field-label">Facility type</span>
+            <select id="facilityType">
+              <option value="hospital">Hospitals</option>
+              <option value="clinic">Clinics</option>
+              <option value="pharmacy">Pharmacies</option>
+              <option value="laboratory">Medical laboratories</option>
+              <option value="doctor">Doctors</option>
+              <option value="dentist">Dental clinics</option>
+              <option value="all">All healthcare facilities</option>
+            </select>
+          </label>
+
+          <button type="submit" class="search-button">
+            <span aria-hidden="true">⌕</span> Find facilities
+          </button>
+        </form>
+
+        <p class="privacy-note">
+          <span aria-hidden="true">⌖</span>
+          Enter a location manually. Your device location is not required.
+        </p>
+      </div>
+
+      <div class="hero-illustration" aria-hidden="true">
+        <div class="illustration-circle">
+          <div class="medical-cross">+</div>
+          <div class="location-pin">
+            <span>+</span>
+          </div>
+          <div class="floating-card card-one">
+            <span class="mini-icon">✚</span>
+            <span>Hospitals</span>
+          </div>
+          <div class="floating-card card-two">
+            <span class="mini-icon pharmacy-icon">✚</span>
+            <span>Pharmacies</span>
+          </div>
+          <div class="floating-card card-three">
+            <span class="mini-icon lab-icon">⌕</span>
+            <span>Laboratories</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="directory-section" id="directory">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">HEALTHCARE DIRECTORY</span>
+          <h2>Explore facilities</h2>
+          <p>Choose a facility type to find relevant locations.</p>
+        </div>
+      </div>
+
+      <div class="facility-grid">
+        <button class="facility-card" type="button" data-type="hospital">
+          <span class="facility-icon hospital-icon">✚</span>
+          <span class="facility-name">Hospitals</span>
+          <span class="facility-description">General and specialist care</span>
+          <span class="facility-action">Find hospitals ↗</span>
+        </button>
+
+        <button class="facility-card" type="button" data-type="clinic">
+          <span class="facility-icon clinic-icon">⌂</span>
+          <span class="facility-name">Clinics</span>
+          <span class="facility-description">Local and outpatient care</span>
+          <span class="facility-action">Find clinics ↗</span>
+        </button>
+
+        <button class="facility-card" type="button" data-type="pharmacy">
+          <span class="facility-icon pharmacy-icon">✚</span>
+          <span class="facility-name">Pharmacies</span>
+          <span class="facility-description">Medicine and pharmacy services</span>
+          <span class="facility-action">Find pharmacies ↗</span>
+        </button>
+
+        <button class="facility-card" type="button" data-type="laboratory">
+          <span class="facility-icon lab-icon">⚗</span>
+          <span class="facility-name">Laboratories</span>
+          <span class="facility-description">Diagnostic and testing services</span>
+          <span class="facility-action">Find laboratories ↗</span>
+        </button>
+
+        <button class="facility-card" type="button" data-type="doctor">
+          <span class="facility-icon doctor-icon">♙</span>
+          <span class="facility-name">Doctors</span>
+          <span class="facility-description">Medical practitioners nearby</span>
+          <span class="facility-action">Find doctors ↗</span>
+        </button>
+
+        <button class="facility-card" type="button" data-type="dentist">
+          <span class="facility-icon dentist-icon">✦</span>
+          <span class="facility-name">Dental clinics</span>
+          <span class="facility-description">Oral and dental healthcare</span>
+          <span class="facility-action">Find dental clinics ↗</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="results-section" id="resultsSection" hidden>
+      <div class="results-heading">
+        <div>
+          <span class="eyebrow">LOCATION SEARCH</span>
+          <h2 id="resultsTitle">Healthcare facilities</h2>
+          <p id="resultsDescription"></p>
+        </div>
+        <button id="clearResultsButton" class="text-button" type="button">
+          Clear results
+        </button>
+      </div>
+
+      <div id="resultsGrid" class="results-grid"></div>
+
+      <p class="results-disclaimer">
+        HealthGuide opens external map searches to show available facilities.
+        Listings, contact information, opening hours, and directions are
+        provided by the map service and should be verified before visiting.
+      </p>
+    </section>
+
+    <section class="emergency-banner">
+      <div class="emergency-icon">!</div>
+      <div>
+        <h2>Need emergency medical assistance?</h2>
+        <p>
+          Do not rely on this directory for emergency response. Contact your
+          local emergency service or go to the nearest emergency department.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="index.html">
+      <span class="brand-icon">+</span>
+      <span>Health<span class="brand-accent">Guide</span></span>
+    </a>
+    <p>Health information for informed decisions.</p>
+    <p class="footer-disclaimer">
+      Educational resource only. Not a substitute for professional medical advice.
+    </p>
+    <p class="copyright">© 2026 HealthGuide</p>
+  </footer>
+</body>
+</html>

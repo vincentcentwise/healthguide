@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Catalog Management | HealthGuide Admin</title>
+  <link rel="stylesheet" href="../css/admin.css">
+  <link rel="stylesheet" href="../css/admin-catalog.css">
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <a class="admin-brand" href="./index.html">
+        <span class="brand-icon">✚</span>
+        <span>HealthGuide<small>ADMINISTRATION</small></span>
+      </a>
+
+      <nav class="admin-nav" aria-label="Admin navigation">
+        <span class="nav-heading">WORKSPACE</span>
+        <a href="./index.html">▦ <span>Overview</span></a>
+        <a href="./users.html">♙ <span>Users</span></a>
+        <a href="./resources.html">▤ <span>Resources</span></a>
+        <a class="active" href="./catalog.html">▦ <span>Catalog</span></a>
+        <span class="nav-heading">SYSTEM</span>
+        <a href="./audit-logs.html">◷ <span>Audit Logs</span></a>
+        <a href="../dashboard.html">↗ <span>User Dashboard</span></a>
+      </nav>
+
+      <button id="logout-button" class="sidebar-logout" type="button">
+        ↪ &nbsp; Sign out
+      </button>
+    </aside>
+
+    <main class="admin-main catalog-main">
+      <header class="catalog-header">
+        <div>
+          <p class="eyebrow">ADMINISTRATION / CATALOG</p>
+          <h1>Catalog Management</h1>
+          <p class="muted">Organize and maintain HealthGuide resource categories.</p>
+        </div>
+        <button id="add-category-button" class="primary-button" type="button">
+          <span aria-hidden="true">＋</span> New category
+        </button>
+      </header>
+
+      <div id="catalog-message" class="catalog-message" role="status" hidden></div>
+
+      <section class="catalog-stats">
+        <article class="catalog-stat">
+          <span>Total categories</span>
+          <strong id="total-categories">—</strong>
+          <small>All catalog categories</small>
+        </article>
+        <article class="catalog-stat">
+          <span>Active categories</span>
+          <strong id="active-categories">—</strong>
+          <small>Available for use</small>
+        </article>
+        <article class="catalog-stat">
+          <span>Inactive categories</span>
+          <strong id="inactive-categories">—</strong>
+          <small>Not currently active</small>
+        </article>
+      </section>
+
+      <section class="catalog-panel">
+        <div class="catalog-panel-heading">
+          <div>
+            <h2>Categories</h2>
+            <p>Keep resource categories clear and consistent.</p>
+          </div>
+          <button id="refresh-categories" class="secondary-button" type="button">
+            ↻ Refresh
+          </button>
+        </div>
+
+        <div class="catalog-toolbar">
+          <label class="catalog-search">
+            <span aria-hidden="true">⌕</span>
+            <input id="category-search" type="search"
+              placeholder="Search categories..."
+              aria-label="Search categories">
+          </label>
+          <select id="category-status-filter" aria-label="Filter categories by status">
+            <option value="all">All statuses</option>
+            <option value="active">Active</option>
+            <option value="inactive">Inactive</option>
+          </select>
+        </div>
+
+        <div class="catalog-table-wrap">
+          <table class="catalog-table">
+            <thead>
+              <tr>
+                <th scope="col">Category</th>
+                <th scope="col">Slug</th>
+                <th scope="col">Status</th>
+                <th scope="col">Created</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="categories-table-body">
+              <tr><td colspan="5" class="table-state">Loading categories…</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <footer class="catalog-footer">
+          <span id="category-results-count">Loading…</span>
+          <span>Categories help organize resources for discovery.</span>
+        </footer>
+      </section>
+
+      <p class="catalog-note">
+        Deactivating a category does not delete it or automatically change the status
+        of resources already assigned to it.
+      </p>
+    </main>
+  </div>
+
+  <dialog id="category-dialog" class="category-dialog">
+    <form id="category-form">
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow">CATALOG SETTINGS</p>
+          <h2 id="category-dialog-title">New category</h2>
+          <p class="muted">Enter a clear name and a unique URL-friendly slug.</p>
+        </div>
+        <button id="close-category-dialog" class="icon-button"
+          type="button" aria-label="Close dialog">×</button>
+      </div>
+
+      <input id="category-id" type="hidden">
+
+      <label class="field-label" for="category-name">Category name</label>
+      <input id="category-name" class="catalog-field" type="text"
+        maxlength="100" required placeholder="e.g. First Aid">
+
+      <label class="field-label" for="category-slug">Slug</label>
+      <input id="category-slug" class="catalog-field" type="text"
+        maxlength="120" required pattern="[a-z0-9]+(?:-[a-z0-9]+)*"
+        placeholder="e.g. first-aid">
+      <small class="field-help">Lowercase letters, numbers and hyphens only.</small>
+
+      <label class="field-label" for="category-status">Status</label>
+      <select id="category-status" class="catalog-field">
+        <option value="active">Active</option>
+        <option value="inactive">Inactive</option>
+      </select>
+
+      <p id="category-form-error" class="form-error" role="alert" hidden></p>
+
+      <div class="dialog-actions">
+        <button id="cancel-category" class="secondary-button" type="button">
+          Cancel
+        </button>
+        <button id="save-category" class="primary-button" type="submit">
+          Save category
+        </button>
+      </div>
+    </form>
+  </dialog>
+
+  <script type="module" src="../js/admin-catalog.js"></script>
+</body>
+</html>
