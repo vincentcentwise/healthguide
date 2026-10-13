@@ -100,19 +100,19 @@ const saveResourceButton =
   document.getElementById("saveResourceButton");
 
 const logoutButton =
-  document.getElementById("logoutButton");
+  document.getElementById("admin-logout");
 
 const adminName =
-  document.getElementById("adminName");
+  document.getElementById("admin-user-name");
 
 const adminAvatar =
-  document.getElementById("adminAvatar");
+  document.getElementById("admin-avatar-letter");
 
 const menuToggle =
-  document.getElementById("menuToggle");
+  document.getElementById("admin-menu-button");
 
 const adminSidebar =
-  document.getElementById("adminSidebar");
+  document.getElementById("admin-sidebar");
 
 
 // ============================================
@@ -1388,47 +1388,39 @@ categoryFilter.addEventListener(
 );
 
 
-// ============================================
+// ========================================
 // MODAL EVENTS
-// ============================================
+// ========================================
 
-newResourceButton.addEventListener(
-  "click",
-  () => openResourceModal()
-);
+// Open the modal when the New Resource button is clicked
+newResourceButton.addEventListener("click", () => {
+  openResourceModal();
+});
 
-closeResourceModal.addEventListener(
-  "click",
-  closeModal
-);
+// Close the modal when the close button is clicked
+closeResourceModal.addEventListener("click", () => {
+  closeModal();
+});
 
-cancelResourceButton.addEventListener(
-  "click",
-  closeModal
-);
+// Close the modal when the Cancel button is clicked
+cancelResourceButton.addEventListener("click", () => {
+  closeModal();
+});
 
-modalBackdrop.addEventListener(
-  "click",
-  closeModal
-);
+// Close the modal when the backdrop is clicked
+modalBackdrop.addEventListener("click", () => {
+  closeModal();
+});
 
-
-document.addEventListener(
-  "keydown",
-  event => {
-
-    if (
-      event.key === "Escape" &&
-      !resourceModal.hidden
-    ) {
-
-      closeModal();
-
-    }
-
+// Close the modal when the Escape key is pressed
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !resourceModal.hidden) {
+    closeModal();
   }
-);
+});
 
+// Save the resource when the form is submitted
+resourceForm.addEventListener("submit", saveResource);
 
 // ============================================
 // LOGOUT
