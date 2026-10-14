@@ -10,31 +10,106 @@
   <link rel="stylesheet" href="../css/admin-catalog.css">
 </head>
 <body>
-  <div class="admin-layout">
-    <aside class="admin-sidebar">
-      <a class="admin-brand" href="./index.html">
-        <span class="brand-icon">✚</span>
-        <span>HealthGuide<small>ADMINISTRATION</small></span>
-      </a>
+ <div class="admin-layout">
+
+    <!-- ==========================================
+         SIDEBAR
+    =========================================== -->
+
+    <aside class="admin-sidebar" id="admin-sidebar">
+
+      <div class="admin-brand">
+        <a href="../index.html">
+          HealthGuide
+        </a>
+
+        <span>
+          Administration
+        </span>
+      </div>
+
 
       <nav class="admin-nav" aria-label="Admin navigation">
-        <span class="nav-heading">WORKSPACE</span>
-        <a href="./index.html">▦ <span>Overview</span></a>
-        <a href="./users.html">♙ <span>Users</span></a>
-        <a href="./resources.html">▤ <span>Resources</span></a>
-        <a class="active" href="./catalog.html">▦ <span>Catalog</span></a>
-        <span class="nav-heading">SYSTEM</span>
-        <a href="./audit-logs.html">◷ <span>Audit Logs</span></a>
-        <a href="../dashboard.html">↗ <span>User Dashboard</span></a>
+
+        <a
+          href="./index.html"
+          class="admin-nav-link active"
+        >
+          <span>📊</span>
+          <span>Dashboard</span>
+        </a>
+
+        <a
+          href="./users.html"
+          class="admin-nav-link"
+        >
+          <span>👥</span>
+          <span>Users</span>
+        </a>
+
+        <a
+          href="./resources.html"
+          class="admin-nav-link"
+        >
+          <span>📚</span>
+          <span>Resources</span>
+        </a>
+
+        <a
+          href="./categories.html"
+          class="admin-nav-link"
+        >
+          <span>🗂️</span>
+          <span>Categories</span>
+        </a>
+
+        <a
+          href="./audit-logs.html"
+          class="admin-nav-link"
+        >
+          <span>📝</span>
+          <span>Audit Logs</span>
+        </a>
+
       </nav>
 
-      <button id="logout-button" class="sidebar-logout" type="button">
-        ↪ &nbsp; Sign out
-      </button>
+
+      <div class="admin-sidebar-bottom">
+
+        <a
+          href="../dashboard.html"
+          class="admin-nav-link"
+        >
+          <span>←</span>
+          <span>User Dashboard</span>
+        </a>
+
+        <button
+          type="button"
+          id="admin-logout"
+          class="admin-logout"
+        >
+          <span>↪</span>
+          <span>Logout</span>
+        </button>
+
+      </div>
+
     </aside>
 
     <main class="admin-main catalog-main">
       <header class="catalog-header">
+
+            <button
+          type="button"
+          id="admin-menu-button"
+          class="admin-menu-button"
+          aria-label="Open admin navigation"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+        
         <div>
           <p class="eyebrow">ADMINISTRATION / CATALOG</p>
           <h1>Catalog Management</h1>
@@ -164,5 +239,12 @@
   </dialog>
 
   <script type="module" src="../js/admin-catalog.js"></script>
+
+   <script
+    type="module"
+    src="../js/admin-dashboard.js"
+  ></script>
+
+
 </body>
 </html>
